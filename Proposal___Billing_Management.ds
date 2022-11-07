@@ -1,0 +1,8687 @@
+/*
+ * Author       : zonehelp
+ * Generated on : 06-Nov-2022 16:07:28
+ * Version      : 1.0
+ */
+ application "Proposal & Billing Management"
+ {
+ 	date format = "dd-MMM-yyyy"
+ 	time zone = "America/Chicago"
+ 	time format = "24-hr"
+ 	section Proposals
+	{
+		icon = "sport-tactic"
+		form New_Proposal
+		{
+			displayname = "New Proposal"
+			success message = "Proposal Added Successfully"
+			field alignment = left
+					hide = true
+			Section4
+			(
+				type = section
+				displayname = "Section"
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			css
+			(
+    			type = plaintext
+				value = "<div> <br /></div>"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Proposal_Information
+			(
+				type = section
+				displayname = "Proposal Information"
+				visibility = true
+	 			row = 2
+	 			column = 0   
+				width = medium
+			)
+			Proposal_Name
+			(
+    			type = text
+				displayname = "Proposal Name"
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Contact
+			(
+				type = picklist	
+				datasource = contacts
+				displayformat = [first_name + last_name]
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Deal
+			(
+				type = picklist	
+				datasource = deals
+				displayformat = [potential_name]
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Proposal_FolUp_WF
+			(
+				type = picklist
+				displayname = "Proposal FolUp-WF"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			No_First_FU_WF_Email
+			(
+    			type = checkbox
+				displayname = "No First FU WF Email"
+				initial value = false
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Account
+			(
+				type = picklist	
+				datasource = accounts
+				displayformat = [account_name]
+	 			row = 2
+	 			column = 2   
+				width = medium
+			)
+			Email
+			(
+    			type = email
+				maxchar = 80
+	 			row = 2
+	 			column = 2   
+				width = medium
+				personal data = true
+			)
+			Edition
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 2
+	 			column = 2   
+				width = medium
+			)
+			Business_Needs1
+			(
+				type = list	
+				displayname = "Business Needs"
+				values = {"Choice 1","Choice 2","Choice 3"}
+				height = 60px
+	 			row = 2
+	 			column = 2   
+				width = medium
+			)
+			Workdrive_Folder_URL
+			(
+    			type = text
+				displayname = "Workdrive Folder URL"
+	 			row = 2
+	 			column = 2   
+				width = medium
+			)
+			Proposal_Summary
+			(
+				type = section
+				displayname = "Proposal Summary"
+				visibility = true
+	 			row = 3
+	 			column = 0   
+				width = medium
+			)
+			Option_A
+			(
+				displayname = "Option A"
+				type = USD
+				format = commadotwestern
+	 			row = 3
+	 			column = 1   
+				width = medium
+			)
+			Option_B
+			(
+				displayname = "Option B"
+				type = USD
+				format = commadotwestern
+	 			row = 3
+	 			column = 1   
+				width = medium
+			)
+			Option_C
+			(
+				displayname = "Option C"
+				type = USD
+				format = commadotwestern
+	 			row = 3
+	 			column = 1   
+				width = medium
+			)
+			Lagniappe
+			(
+				type = USD
+				format = commadotwestern
+	 			row = 3
+	 			column = 1   
+				width = medium
+			)
+			Option_A_EstimHours2
+			(
+				type = decimal
+				displayname = "Option A EstimHours"
+	 			row = 3
+	 			column = 2   
+				width = medium
+			)
+			Option_B_EstimHours
+			(
+				type = decimal
+				displayname = "Option B EstimHours"
+	 			row = 3
+	 			column = 2   
+				width = medium
+			)
+			Option_C_EstimHours
+			(
+				type = decimal
+				displayname = "Option C EstimHours"
+	 			row = 3
+	 			column = 2   
+				width = medium
+			)
+			Multiplier
+			(
+				type = decimal
+	 			row = 3
+	 			column = 2   
+				width = medium
+			)
+			Section
+			(
+				type = section
+	 			row = 4
+	 			column = 0   
+				width = medium
+			)
+			plain
+			(
+    			type = plaintext
+				value = "<div><br /></div>"
+	 			row = 4
+	 			column = 1   
+				width = medium
+			)
+			Proposal_Finalization
+			(
+				type = section
+				displayname = "Proposal Finalization"
+	 			row = 5
+	 			column = 0   
+				width = medium
+			)
+			Selected
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 5
+	 			column = 1   
+				width = medium
+			)
+			Selected_Hours
+			(
+				type = decimal
+				displayname = "Selected Hours"
+	 			row = 5
+	 			column = 2   
+				width = medium
+			)
+			Selected_Amount
+			(
+				displayname = "Selected Amount"
+				type = USD
+				format = commadotwestern
+	 			row = 5
+	 			column = 3   
+				width = medium
+			)
+			Business_Needs
+			(
+				type = section
+				displayname = "Business Needs"
+				visibility = true
+	 			row = 6
+	 			column = 0   
+				width = medium
+			)
+			Bus_Needs_1
+			(
+    			type = text
+				displayname = "Bus Needs 1"
+	 			row = 6
+	 			column = 1   
+				width = medium
+			)
+			Bus_Needs_2
+			(
+    			type = text
+				displayname = "Bus Needs 2"
+	 			row = 6
+	 			column = 1   
+				width = medium
+			)
+			Bus_Needs_3
+			(
+    			type = text
+				displayname = "Bus Needs 3"
+	 			row = 6
+	 			column = 1   
+				width = medium
+			)
+			Other_Thoughts
+			(
+    			type = text
+				displayname = "Other Thoughts"
+	 			row = 6
+	 			column = 2   
+				width = medium
+			)
+			Ideal_Outcome
+			(
+    			type = textarea
+				displayname = "Ideal Outcome"
+				height = 100px
+	 			row = 6
+	 			column = 2   
+				width = medium
+			)
+			Section1
+			(
+				type = section
+				displayname = "Section"
+	 			row = 7
+	 			column = 0   
+				width = medium
+			)
+			plain1
+			(
+    			type = plaintext
+				value = "<div><br /></div>"
+	 			row = 7
+	 			column = 1   
+				width = medium
+			)
+			Hide_Basic_Services
+			(
+    			type = checkbox
+				displayname = "Hide Basic Services"
+				initial value = false
+	 			row = 7
+	 			column = 1   
+				width = medium
+			)
+			Basic_Services
+			(
+				type = section
+				displayname = "Basic Services"
+				visibility = true
+	 			row = 8
+	 			column = 0   
+				width = medium
+			)
+			Initial_Meeting
+			(
+				type = picklist
+				displayname = "Initial Meeting"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 8
+	 			column = 1   
+				width = medium
+			)
+			Analyze_Existing_Data
+			(
+				type = picklist
+				displayname = "Analyze Existing Data"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 8
+	 			column = 1   
+				width = medium
+			)
+			Define_Security
+			(
+				type = picklist
+				displayname = "Define Security"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 8
+	 			column = 1   
+				width = medium
+			)
+			Basic_DB_Design
+			(
+				type = picklist
+				displayname = "Basic DB Design"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 8
+	 			column = 1   
+				width = medium
+			)
+			Import_Basic_Data
+			(
+				type = picklist
+				displayname = "Import Basic Data"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 8
+	 			column = 2   
+				width = medium
+			)
+			Data_Seg_Views
+			(
+				type = picklist
+				displayname = "Data Seg / Views"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 8
+	 			column = 2   
+				width = medium
+			)
+			End_User_Training
+			(
+				type = picklist
+				displayname = "End User Training"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 8
+	 			column = 2   
+				width = medium
+			)
+			Section2
+			(
+				type = section
+				displayname = "Section"
+	 			row = 9
+	 			column = 0   
+				width = medium
+			)
+			plain2
+			(
+    			type = plaintext
+				value = "<div><br /></div>"
+	 			row = 9
+	 			column = 1   
+				width = medium
+			)
+			Hide_Intermediate_Services
+			(
+    			type = checkbox
+				displayname = "Hide Intermediate Services"
+				initial value = false
+	 			row = 9
+	 			column = 1   
+				width = medium
+			)
+			Intermediate_Services
+			(
+				type = section
+				displayname = "Intermediate Services"
+				visibility = true
+	 			row = 10
+	 			column = 0   
+				width = medium
+			)
+			Elaborate_Data_Migration
+			(
+				type = picklist
+				displayname = "Elaborate Data Migration"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Clean_Up_Views
+			(
+				type = picklist
+				displayname = "Clean Up Views"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Adv_Design_Custom_Mod
+			(
+				type = picklist
+				displayname = "Adv Design-Custom Mod"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Num_Custom_Modules
+			(
+				type = picklist
+				displayname = "Num Custom Modules"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Custom_Module_Notes
+			(
+    			type = text
+				displayname = "Custom Module Notes"
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Add_Layout_Rules
+			(
+				type = picklist
+				displayname = "Add Layout Rules"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Layout_Rule_Notes
+			(
+    			type = text
+				displayname = "Layout Rule Notes"
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Workflow_Rules
+			(
+				type = picklist
+				displayname = "Workflow Rules"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Num_WF_Rules
+			(
+				type = picklist
+				displayname = "Num WF Rules"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Workflow_Rule_Notes
+			(
+    			type = text
+				displayname = "Workflow Rule Notes"
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Create_Email_Templates
+			(
+				type = picklist
+				displayname = "Create Email Templates"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Num_Email_Templates
+			(
+				type = picklist
+				displayname = "Num Email Templates"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Email_Template_Notes
+			(
+    			type = text
+				displayname = "Email Template Notes"
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Remote_Work_Bundle_Cliq_Connect_Workdrive_Meeting
+			(
+				type = picklist
+				displayname = "Remote Work Bundle Cliq/Connect/Workdrive/Meeting"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Bookings
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Check_In_Meetings
+			(
+				type = picklist
+				displayname = "Check In Meetings"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Num_Meetings
+			(
+				type = picklist
+				displayname = "Num Meetings"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Basic_Reports
+			(
+				type = picklist
+				displayname = "Basic Reports"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Add_l_Report_Notes
+			(
+    			type = text
+				displayname = "Add'l Report Notes"
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			KPI_Dashboard
+			(
+				type = picklist
+				displayname = "KPI Dashboard"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Company_Home_Page
+			(
+				type = picklist
+				displayname = "Company Home Page"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Email_Setup
+			(
+				type = picklist
+				displayname = "Email Setup"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Email_Software
+			(
+				type = picklist
+				displayname = "Email Software"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Zoho_Mail_Setup
+			(
+				type = picklist
+				displayname = "Zoho Mail Setup"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Webform_Simple_Forms
+			(
+				type = picklist
+				displayname = "Webform/Simple Forms"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Num_Webforms
+			(
+				type = number
+				displayname = "Num Webforms"
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Support
+			(
+				type = list	
+				values = {"Choice 1","Choice 2","Choice 3"}
+				height = 60px
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Spec_Request_Title
+			(
+    			type = text
+				displayname = "Spec Request Title"
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Spec_Request_Details
+			(
+    			type = textarea
+				displayname = "Spec Request Details"
+				height = 100px
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Spec_Req_Pricing
+			(
+				displayname = "Spec Req Pricing"
+				type = USD
+				format = commadotwestern
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Spec_Request_Hrs
+			(
+				type = number
+				displayname = "Spec Request Hrs"
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Section3
+			(
+				type = section
+				displayname = "Section"
+	 			row = 11
+	 			column = 0   
+				width = medium
+			)
+			plain3
+			(
+    			type = plaintext
+				value = "<div><br /></div>"
+	 			row = 11
+	 			column = 1   
+				width = medium
+			)
+			Hide_Advanced_Services
+			(
+    			type = checkbox
+				displayname = "Hide Advanced Services"
+				initial value = false
+	 			row = 11
+	 			column = 1   
+				width = medium
+			)
+			Advanced_Services
+			(
+				type = section
+				displayname = "Advanced Services"
+				visibility = true
+	 			row = 12
+	 			column = 0   
+				width = medium
+			)
+			Role_Security
+			(
+				type = picklist
+				displayname = "Role Security"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Adv_Custom_Functions
+			(
+				type = picklist
+				displayname = "Adv Custom Functions"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Num_CF
+			(
+				type = number
+				displayname = "Num CF"
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			CF_Notes
+			(
+    			type = text
+				displayname = "CF Notes"
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Campaigns_MH_Integration
+			(
+				type = picklist
+				displayname = "Campaigns/MH Integration"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Campaigns_MH_Training
+			(
+				type = picklist
+				displayname = "Campaigns/MH Training"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Social
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Sign_Integ_Training
+			(
+				type = picklist
+				displayname = "Sign Integ / Training"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			SalesIQ_Integ_Training
+			(
+				type = picklist
+				displayname = "SalesIQ Integ / Training"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Zobots
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Zobot_Notes
+			(
+    			type = text
+				displayname = "Zobot Notes"
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Zobot_Pricing
+			(
+				type = number
+				displayname = "Zobot Pricing"
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Desk_Integ_Training
+			(
+				type = picklist
+				displayname = "Desk Integ / Training"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Books_Integ_Training
+			(
+				type = picklist
+				displayname = "Books Integ / Training"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Inventory
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			People
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Performance_Evaluations
+			(
+				type = picklist
+				displayname = "Performance Evaluations"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Recruit
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Complicated_Forms
+			(
+				type = picklist
+				displayname = "Complicated Forms"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Num_Forms
+			(
+				type = number
+				displayname = "Num Forms"
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Survey
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Projects
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Adv_Analytics
+			(
+				type = picklist
+				displayname = "Adv Analytics"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Adv_Analytics_Notes
+			(
+    			type = text
+				displayname = "Adv Analytics Notes"
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Num_AA_Reports
+			(
+				type = number
+				displayname = "Num AA Reports"
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Pilot_Testing
+			(
+				type = picklist
+				displayname = "Pilot Testing"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Documentation
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Spec_Req_C
+			(
+    			type = text
+				displayname = "Spec Req C"
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Spec_Req_C_Details
+			(
+    			type = textarea
+				displayname = "Spec Req C Details"
+				height = 100px
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Spec_Req_C_Pricing
+			(
+				displayname = "Spec Req C Pricing"
+				type = USD
+				format = commadotwestern
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Spec_Req_C_Hours
+			(
+				type = number
+				displayname = "Spec Req C Hours"
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Follow_Up_User_Training
+			(
+				type = picklist
+				displayname = "Follow Up User Training"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Admin_Basic_Training
+			(
+				type = picklist
+				displayname = "Admin Basic Training"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Admin_Adv_Training
+			(
+				type = picklist
+				displayname = "Admin Adv Training"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Custom_Development_Requests
+			(
+				type = grid
+				displayname = "Custom Development Requests"
+				Development_Request_Name
+				(
+    				type = text
+					displayname = "Development Request Name"
+					width = medium
+				)
+				Development_Request_Type
+				(
+					type = picklist
+					displayname = "Development Request Type"
+					maxchar = 100
+					values = {"Choice 1","Choice 2","Choice 3"}
+					width = medium
+				)
+				A_B_or_C
+				(
+					type = picklist
+					displayname = "A, B, or C"
+					maxchar = 100
+					values = {"Choice 1","Choice 2","Choice 3"}
+					width = medium
+				)
+				Hours
+				(
+					type = number
+					width = medium
+				)
+				Rate
+				(
+					type = number
+					width = medium
+				)
+				Development_Request_Total
+				(
+					displayname = "Development Request Total"
+					type = USD
+					format = commadotwestern
+					width = medium
+				)
+	 			row = 13
+	 			column = 1   
+				width = medium
+			)
+			Services_Test
+			(
+				type = grid
+				displayname = "Services (Test)"
+				Service
+				(
+					type = picklist
+					maxchar = 100
+					values = {"Choice 1","Choice 2","Choice 3"}
+					width = medium
+				)
+				Tier_A_B_C
+				(
+					type = picklist
+					displayname = "Tier (A,B,C)"
+					maxchar = 100
+					values = {"Choice 1","Choice 2","Choice 3"}
+					width = medium
+				)
+				Quantity
+				(
+					type = number
+					width = medium
+				)
+				Rate
+				(
+					type = USD
+					format = commadotwestern
+					width = medium
+				)
+				Total
+				(
+					type = USD
+					format = commadotwestern
+					width = medium
+				)
+				Service_Notes
+				(
+    				type = textarea
+					displayname = "Service Notes"
+					height = 100px
+					width = medium
+				)
+	 			row = 14
+	 			column = 1   
+				width = medium
+			)
+			Service_List_A
+			(
+				type = grid
+				displayname = "Service List A"
+				private = true
+	 			row = 15
+	 			column = 1   
+				width = medium
+			)
+			Service_List_B
+			(
+				type = grid
+				displayname = "Service List B"
+				private = true
+	 			row = 16
+	 			column = 1   
+				width = medium
+			)
+			Service_List_C
+			(
+				type = grid
+				displayname = "Service List C"
+				private = true
+	 			row = 17
+	 			column = 1   
+				width = medium
+			)
+	
+			customize
+			(
+				icon = "sport-tactic"
+			)
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		default list All_Proposals
+		{
+			displayName = "All Proposals"
+			show all rows from New_Proposal    
+			(
+				Option_A as "Option A"
+				Account
+				Contact
+				Deal
+				Email
+				Edition
+				No_First_FU_WF_Email as "No First FU WF Email"
+				Proposal_FolUp_WF as "Proposal FolUp-WF"
+				Business_Needs1 as "Business Needs"
+				Workdrive_Folder_URL as "Workdrive Folder URL"
+				Option_A_EstimHours2 as "Option A EstimHours"
+				Option_B as "Option B"
+				Proposal_Name as "Proposal Name"
+				Option_C as "Option C"
+				Option_B_EstimHours as "Option B EstimHours"
+				Option_C_EstimHours as "Option C EstimHours"
+				Lagniappe
+				Multiplier
+				Selected
+				Selected_Amount as "Selected Amount"
+				Selected_Hours as "Selected Hours"
+				Bus_Needs_1 as "Bus Needs 1"
+				Bus_Needs_2 as "Bus Needs 2"
+				Ideal_Outcome as "Ideal Outcome"
+				Other_Thoughts as "Other Thoughts"
+				Bus_Needs_3 as "Bus Needs 3"
+				Initial_Meeting as "Initial Meeting"
+				Import_Basic_Data as "Import Basic Data"
+				Analyze_Existing_Data as "Analyze Existing Data"
+				Define_Security as "Define Security"
+				Basic_DB_Design as "Basic DB Design"
+				Data_Seg_Views as "Data Seg / Views"
+				End_User_Training as "End User Training"
+				Elaborate_Data_Migration as "Elaborate Data Migration"
+				Check_In_Meetings as "Check In Meetings"
+				Clean_Up_Views as "Clean Up Views"
+				Num_Meetings as "Num Meetings"
+				Basic_Reports as "Basic Reports"
+				Adv_Design_Custom_Mod as "Adv Design-Custom Mod"
+				Num_Custom_Modules as "Num Custom Modules"
+				Add_l_Report_Notes as "Add'l Report Notes"
+				KPI_Dashboard as "KPI Dashboard"
+				Company_Home_Page as "Company Home Page"
+				Email_Setup as "Email Setup"
+				Email_Software as "Email Software"
+				Zoho_Mail_Setup as "Zoho Mail Setup"
+				Webform_Simple_Forms as "Webform/Simple Forms"
+				Custom_Module_Notes as "Custom Module Notes"
+				Add_Layout_Rules as "Add Layout Rules"
+				Layout_Rule_Notes as "Layout Rule Notes"
+				Workflow_Rules as "Workflow Rules"
+				Num_WF_Rules as "Num WF Rules"
+				Workflow_Rule_Notes as "Workflow Rule Notes"
+				Create_Email_Templates as "Create Email Templates"
+				Num_Email_Templates as "Num Email Templates"
+				Email_Template_Notes as "Email Template Notes"
+				Remote_Work_Bundle_Cliq_Connect_Workdrive_Meeting as "Remote Work Bundle Cliq/Connect/Workdrive/Meeting"
+				Bookings
+				Num_Webforms as "Num Webforms"
+				Support
+				Spec_Request_Title as "Spec Request Title"
+				Spec_Request_Details as "Spec Request Details"
+				Spec_Req_Pricing as "Spec Req Pricing"
+				Spec_Request_Hrs as "Spec Request Hrs"
+				Role_Security as "Role Security"
+				Num_Forms as "Num Forms"
+				Adv_Custom_Functions as "Adv Custom Functions"
+				Num_CF as "Num CF"
+				CF_Notes as "CF Notes"
+				Campaigns_MH_Integration as "Campaigns/MH Integration"
+				Campaigns_MH_Training as "Campaigns/MH Training"
+				Social
+				Sign_Integ_Training as "Sign Integ / Training"
+				SalesIQ_Integ_Training as "SalesIQ Integ / Training"
+				Zobots
+				Zobot_Notes as "Zobot Notes"
+				Zobot_Pricing as "Zobot Pricing"
+				Desk_Integ_Training as "Desk Integ / Training"
+				Books_Integ_Training as "Books Integ / Training"
+				Inventory
+				People
+				Performance_Evaluations as "Performance Evaluations"
+				Recruit
+				Complicated_Forms as "Complicated Forms"
+				Survey
+				Projects
+				Adv_Analytics_Notes as "Adv Analytics Notes"
+				Num_AA_Reports as "Num AA Reports"
+				Pilot_Testing as "Pilot Testing"
+				Documentation
+				Spec_Req_C as "Spec Req C"
+				Spec_Req_C_Details as "Spec Req C Details"
+				Spec_Req_C_Pricing as "Spec Req C Pricing"
+				Spec_Req_C_Hours as "Spec Req C Hours"
+				Follow_Up_User_Training as "Follow Up User Training"
+				Admin_Basic_Training as "Admin Basic Training"
+				Admin_Adv_Training as "Admin Adv Training"
+				Hide_Basic_Services as "Hide Basic Services"
+				Hide_Intermediate_Services as "Hide Intermediate Services"
+				Hide_Advanced_Services as "Hide Advanced Services"
+				Adv_Analytics as "Adv Analytics"
+				Custom_Development_Requests.Development_Request_Name as "Custom Development Requests"
+				Services_Test.Service as "Services (Test)"
+			)
+			options
+			(
+				icon = "travel-world"
+	 		)
+			quickview
+			(
+				layout
+				(
+		 			type = -1
+					datablock1
+					(
+			 			layout type = -1
+						fields
+						(
+							Option_A as "Option A"
+							Account
+							Contact
+							Deal
+							Email
+							Edition
+						)
+					)
+				)
+
+				menu
+    			(
+    	 			header
+    	 			(
+    		 			Edit 
+    		 			Duplicate 
+    		 			Delete 
+    	 			)
+							record
+							(
+								Edit   	   
+								Duplicate   	   
+								Delete   	   
+    						)
+    			)
+    			action
+    			(
+							on click
+							(
+								View Record   	   
+    						)
+							on right click
+							(
+								Edit   	   
+								Delete   	   
+								Duplicate   	   
+								View Record   	   
+    						)
+     			)
+			)
+			detailview
+			(
+				layout
+				(
+		 			type = 1
+					datablock1
+					(
+			 			layout type = -2
+						fields
+						(
+							Option_A as "Option A"
+							Account
+							Contact
+							Deal
+							Email
+							Edition
+							No_First_FU_WF_Email as "No First FU WF Email"
+							Proposal_FolUp_WF as "Proposal FolUp-WF"
+							Business_Needs1 as "Business Needs"
+							Workdrive_Folder_URL as "Workdrive Folder URL"
+							Option_A_EstimHours2 as "Option A EstimHours"
+							Option_B as "Option B"
+							Proposal_Name as "Proposal Name"
+							Option_C as "Option C"
+							Option_B_EstimHours as "Option B EstimHours"
+							Option_C_EstimHours as "Option C EstimHours"
+							Lagniappe
+							Multiplier
+							Selected
+							Selected_Amount as "Selected Amount"
+							Selected_Hours as "Selected Hours"
+							Bus_Needs_1 as "Bus Needs 1"
+							Bus_Needs_2 as "Bus Needs 2"
+							Ideal_Outcome as "Ideal Outcome"
+							Other_Thoughts as "Other Thoughts"
+							Bus_Needs_3 as "Bus Needs 3"
+							Initial_Meeting as "Initial Meeting"
+							Import_Basic_Data as "Import Basic Data"
+							Analyze_Existing_Data as "Analyze Existing Data"
+							Define_Security as "Define Security"
+							Basic_DB_Design as "Basic DB Design"
+							Data_Seg_Views as "Data Seg / Views"
+							End_User_Training as "End User Training"
+							Elaborate_Data_Migration as "Elaborate Data Migration"
+							Check_In_Meetings as "Check In Meetings"
+							Clean_Up_Views as "Clean Up Views"
+							Num_Meetings as "Num Meetings"
+							Basic_Reports as "Basic Reports"
+							Adv_Design_Custom_Mod as "Adv Design-Custom Mod"
+							Num_Custom_Modules as "Num Custom Modules"
+							Add_l_Report_Notes as "Add'l Report Notes"
+							KPI_Dashboard as "KPI Dashboard"
+							Company_Home_Page as "Company Home Page"
+							Email_Setup as "Email Setup"
+							Email_Software as "Email Software"
+							Zoho_Mail_Setup as "Zoho Mail Setup"
+							Webform_Simple_Forms as "Webform/Simple Forms"
+							Custom_Module_Notes as "Custom Module Notes"
+							Add_Layout_Rules as "Add Layout Rules"
+							Layout_Rule_Notes as "Layout Rule Notes"
+							Workflow_Rules as "Workflow Rules"
+							Num_WF_Rules as "Num WF Rules"
+							Workflow_Rule_Notes as "Workflow Rule Notes"
+							Create_Email_Templates as "Create Email Templates"
+							Num_Email_Templates as "Num Email Templates"
+							Email_Template_Notes as "Email Template Notes"
+							Remote_Work_Bundle_Cliq_Connect_Workdrive_Meeting as "Remote Work Bundle Cliq/Connect/Workdrive/Meeting"
+							Bookings
+							Num_Webforms as "Num Webforms"
+							Support
+							Spec_Request_Title as "Spec Request Title"
+							Spec_Request_Details as "Spec Request Details"
+							Spec_Req_Pricing as "Spec Req Pricing"
+							Spec_Request_Hrs as "Spec Request Hrs"
+							Role_Security as "Role Security"
+							Num_Forms as "Num Forms"
+							Adv_Custom_Functions as "Adv Custom Functions"
+							Num_CF as "Num CF"
+							CF_Notes as "CF Notes"
+							Campaigns_MH_Integration as "Campaigns/MH Integration"
+							Campaigns_MH_Training as "Campaigns/MH Training"
+							Social
+							Sign_Integ_Training as "Sign Integ / Training"
+							SalesIQ_Integ_Training as "SalesIQ Integ / Training"
+							Zobots
+							Zobot_Notes as "Zobot Notes"
+							Zobot_Pricing as "Zobot Pricing"
+							Desk_Integ_Training as "Desk Integ / Training"
+							Books_Integ_Training as "Books Integ / Training"
+							Inventory
+							People
+							Performance_Evaluations as "Performance Evaluations"
+							Recruit
+							Complicated_Forms as "Complicated Forms"
+							Survey
+							Projects
+							Adv_Analytics_Notes as "Adv Analytics Notes"
+							Num_AA_Reports as "Num AA Reports"
+							Pilot_Testing as "Pilot Testing"
+							Documentation
+							Spec_Req_C as "Spec Req C"
+							Spec_Req_C_Details as "Spec Req C Details"
+							Spec_Req_C_Pricing as "Spec Req C Pricing"
+							Spec_Req_C_Hours as "Spec Req C Hours"
+							Follow_Up_User_Training as "Follow Up User Training"
+							Admin_Basic_Training as "Admin Basic Training"
+							Admin_Adv_Training as "Admin Adv Training"
+							Hide_Basic_Services as "Hide Basic Services"
+							Hide_Intermediate_Services as "Hide Intermediate Services"
+							Hide_Advanced_Services as "Hide Advanced Services"
+							Adv_Analytics as "Adv Analytics"
+							Custom_Development_Requests.Development_Request_Name as "Custom Development Requests"
+							Services_Test.Service as "Services (Test)"
+						)
+					)
+				)
+
+				menu
+    			(
+    	 			header
+    	 			(
+    		 			Edit 
+    		 			Duplicate 
+    		 			Delete 
+    	 			)
+    			)
+			)
+		}
+	}
+	section Service_Instructions
+	{
+		displayname= "Service Instructions"
+		icon = "sport-tactic"
+		form Service_Instructions
+		{
+			displayname = "Service Instructions"
+			success message = "Proposal Instruction Added Successfully"
+			field alignment = left
+					hide = true
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			Field_Name
+			(
+    			type = text
+				displayname = "Field Name"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Field_Link_Name
+			(
+    			type = text
+				displayname = "Field Link Name"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Field_Type
+			(
+				type = picklist
+				displayname = "Field Type"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			A_B_or_C
+			(
+				type = picklist
+				displayname = "A, B, or C"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Rate
+			(
+				type = USD
+				format = commadotwestern
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Discount
+			(
+				type = USD
+				format = commadotwestern
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Hours_per_Unit
+			(
+				type = decimal
+				displayname = "Hours per Unit"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			customize
+			(
+				icon = "sport-tactic"
+			)
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		default list All_Service_Instructions
+		{
+			displayName = "All Service Instructions"
+			show all rows from Service_Instructions    
+			(
+				Field_Name as "Field Name"
+				Field_Link_Name as "Field Link Name"
+				Field_Type as "Field Type"
+				A_B_or_C as "A, B, or C"
+				Rate
+				Discount
+				Hours_per_Unit as "Hours per Unit"
+			)
+			options
+			(
+				icon = "travel-world"
+	 		)
+			quickview
+			(
+				layout
+				(
+		 			type = -1
+					datablock1
+					(
+			 			layout type = -1
+						fields
+						(
+							Field_Name as "Field Name"
+							Field_Link_Name as "Field Link Name"
+							Field_Type as "Field Type"
+							A_B_or_C as "A, B, or C"
+							Rate
+							Discount
+							Hours_per_Unit as "Hours per Unit"
+						)
+					)
+				)
+
+				menu
+    			(
+    	 			header
+    	 			(
+    		 			Edit 
+    		 			Duplicate 
+    		 			Delete 
+    	 			)
+							record
+							(
+								Edit   	   
+								Duplicate   	   
+								Delete   	   
+    						)
+    			)
+    			action
+    			(
+							on click
+							(
+								View Record   	   
+    						)
+							on right click
+							(
+								Edit   	   
+								Delete   	   
+								Duplicate   	   
+								View Record   	   
+    						)
+     			)
+			)
+			detailview
+			(
+				layout
+				(
+		 			type = 1
+					datablock1
+					(
+			 			layout type = -2
+						fields
+						(
+							Field_Name as "Field Name"
+							Field_Link_Name as "Field Link Name"
+							Field_Type as "Field Type"
+							A_B_or_C as "A, B, or C"
+							Rate
+							Discount
+							Hours_per_Unit as "Hours per Unit"
+						)
+					)
+				)
+
+				menu
+    			(
+    	 			header
+    	 			(
+    		 			Edit 
+    		 			Duplicate 
+    		 			Delete 
+    	 			)
+    			)
+			)
+		}
+	}
+	section Meetings
+	{
+		icon = "business-board-27"
+		form Meetings
+		{
+			success message = "Meeting Added Successfully"
+			field alignment = left
+					hide = true
+			Meeting_Information
+			(
+				type = section
+				displayname = "Meeting Information"
+				visibility = true
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			Meeting_Name
+			(
+    			type = text
+				displayname = "Meeting Name"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			From
+			(
+    			type = datetime
+				timedisplayoptions = "hh:mm"
+				alloweddays = 0,1,2,3,4,5,6
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			To
+			(
+    			type = datetime
+				timedisplayoptions = "hh:mm"
+				alloweddays = 0,1,2,3,4,5,6
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Event_Type
+			(
+				type = picklist
+				displayname = "Event Type"
+				maxchar = 100
+				values = {"Marketing/Demo","Consulting Remote","Training","Initial Project Training","Project","Support Contract","Personal","CSI Project","Admin","Shadowing","Duplicate Client Event"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Bill
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Yes","Yes, No Charge","No","Billed","Billed-No Charge","Hold","TBD","Change Control Billed","Yes, Bill Through Zach","Yes, Bill Through Susan","Yes, Bill Through Alex"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Meeting_Details
+			(
+				type = section
+				displayname = "Meeting Details"
+				visibility = true
+	 			row = 2
+	 			column = 0   
+				width = medium
+			)
+			Hrs_to_Bill
+			(
+				type = decimal
+				displayname = "Hrs to Bill"
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Contact
+			(
+				type = picklist	
+				datasource = contacts
+				displayformat = [first_name + last_name]
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Account
+			(
+				type = picklist	
+				datasource = accounts
+				displayformat = [account_name]
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Proposal
+			(
+				type = picklist	
+				values  = New_Proposal.ID
+    			displayformat = [Proposal_Name]
+				sortorder = ascending
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			QMC
+			(
+    			type = checkbox
+				initial value = false
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Description
+			(
+    			type = textarea
+				height = 100px
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Tasks
+			(
+				type = grid
+				must have Task_Name
+				(
+					type = picklist
+					displayname = "Task Name"
+					maxchar = 100
+					values = {"Choice 1","Choice 2","Choice 3"}
+					others option = true
+					width = medium
+				)
+				must have Time_Billed
+				(
+					type = decimal
+					displayname = "Time Billed"
+					width = medium
+				)
+				Task_Description
+				(
+    				type = textarea
+					displayname = "Task Description"
+					height = 100px
+					width = medium
+				)
+	 			row = 3
+	 			column = 1   
+				width = medium
+			)
+			Hidden
+			(
+				type = section
+				visibility = true
+	 			row = 4
+	 			column = 0   
+				width = medium
+			)
+			zCRM_Meeting_ID
+			(
+    			type = text
+				displayname = "zCRM Meeting ID"
+	 			row = 4
+	 			column = 1   
+				width = medium
+			)
+	
+			customize
+			(
+				icon = "business-board-27"
+			)
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		default list All_Meetings
+		{
+			displayName = "All Meetings"
+			show all rows from Meetings    
+			(
+				Meeting_Name as "Meeting Name"
+				From
+				To
+				Event_Type as "Event Type"
+				Bill
+				zCRM_Meeting_ID as "zCRM Meeting ID"
+				Hrs_to_Bill as "Hrs to Bill"
+				Contact
+				Account
+				QMC
+				Description
+				Tasks.Task_Name as "Tasks"
+				Proposal
+			)
+			options
+			(
+				icon = "travel-world"
+	 		)
+			quickview
+			(
+				layout
+				(
+		 			type = -1
+					datablock1
+					(
+			 			layout type = -1
+						fields
+						(
+							Meeting_Name as "Meeting Name"
+							From
+							To
+							Event_Type as "Event Type"
+							Bill
+							zCRM_Meeting_ID as "zCRM Meeting ID"
+							Proposal
+						)
+					)
+				)
+
+				menu
+    			(
+    	 			header
+    	 			(
+    		 			Edit 
+    		 			Duplicate 
+    		 			Delete 
+    	 			)
+							record
+							(
+								Edit   	   
+								Duplicate   	   
+								Delete   	   
+    						)
+    			)
+    			action
+    			(
+							on click
+							(
+								View Record   	   
+    						)
+							on right click
+							(
+								Edit   	   
+								Delete   	   
+								Duplicate   	   
+								View Record   	   
+    						)
+     			)
+			)
+			detailview
+			(
+				layout
+				(
+		 			type = 1
+					datablock1
+					(
+			 			layout type = -2
+						fields
+						(
+							Meeting_Name as "Meeting Name"
+							From
+							To
+							Event_Type as "Event Type"
+							Bill
+							zCRM_Meeting_ID as "zCRM Meeting ID"
+							Hrs_to_Bill as "Hrs to Bill"
+							Contact
+							Account
+							QMC
+							Description
+							Tasks.Task_Name as "Tasks"
+							Proposal
+						)
+					)
+				)
+
+				menu
+    			(
+    	 			header
+    	 			(
+    		 			Edit 
+    		 			Duplicate 
+    		 			Delete 
+    	 			)
+    			)
+			)
+		}
+	}
+	section Tasks
+	{
+		icon = "business-notes"
+		form Tasks
+		{
+			success message = "Task Added Successfully"
+			field alignment = left
+					hide = true
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			Task_Name
+			(
+    			type = text
+				displayname = "Task Name"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			customize
+			(
+				icon = "business-notes"
+			)
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		default list All_Tasks
+		{
+			displayName = "All Tasks"
+   			hide = true
+			show all rows from Tasks    
+			(
+				Task_Name as "Task Name"
+			)
+			options
+			(
+				icon = "travel-world"
+	 		)
+			quickview
+			(
+				layout
+				(
+		 			type = -1
+					datablock1
+					(
+			 			layout type = -1
+						fields
+						(
+							Task_Name as "Task Name"
+						)
+					)
+				)
+
+				menu
+    			(
+    	 			header
+    	 			(
+    		 			Edit 
+    		 			Duplicate 
+    		 			Delete 
+    	 			)
+							record
+							(
+								Edit   	   
+								Duplicate   	   
+								Delete   	   
+    						)
+    			)
+    			action
+    			(
+							on click
+							(
+								View Record   	   
+    						)
+							on right click
+							(
+								Edit   	   
+								Delete   	   
+								Duplicate   	   
+								View Record   	   
+    						)
+     			)
+			)
+			detailview
+			(
+				layout
+				(
+		 			type = 1
+					datablock1
+					(
+			 			layout type = -2
+						fields
+						(
+							Task_Name as "Task Name"
+						)
+					)
+				)
+
+				menu
+    			(
+    	 			header
+    	 			(
+    		 			Edit 
+    		 			Duplicate 
+    		 			Delete 
+    	 			)
+    			)
+			)
+		}
+	}
+	section Services
+	{
+		icon = "travel-church"
+		form Services
+		{
+			success message = "Service Added Successfully"
+			field alignment = left
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			unique Service_Name
+			(
+    			type = text
+				displayname = "Service Name"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			A_B_C
+			(
+				type = list	
+				displayname = "A, B, C"
+				values = {"A","B","C"}
+				height = 60px
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Units
+			(
+				type = number
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Units_Field
+			(
+    			type = text
+				displayname = "Units Field"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Service_Notes_Field
+			(
+    			type = textarea
+				displayname = "Service Notes Field"
+				height = 100px
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Hours_Unit
+			(
+				type = decimal
+				displayname = "Hours/Unit"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Base_Rate
+			(
+				displayname = "Base Rate"
+				type = USD
+				format = commadotwestern
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Option_B_Rate
+			(
+				displayname = "Option B Rate"
+				type = USD
+				format = commadotwestern
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Option_C_Rate
+			(
+				displayname = "Option C Rate"
+				type = USD
+				format = commadotwestern
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Rate
+			(
+				type = USD
+				format = commadotwestern
+				private = true
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Merge_Text
+			(
+    			type = textarea
+				displayname = "Merge Text"
+				height = 100px
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Service_Level
+			(
+				type = picklist
+				displayname = "Service Level"
+				maxchar = 100
+				values = {"Basic","Intermediate","Advanced"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Special_Field
+			(
+				type = picklist
+				displayname = "Special Field?"
+				maxchar = 100
+				values = {"Yes","No"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Inactive
+			(
+    			type = checkbox
+				displayname = "Inactive?"
+				initial value = false
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Default_Service
+			(
+				type = picklist
+				displayname = "Default Service"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			customize
+			(
+				icon = "travel-church"
+			)
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		default list All_Services
+		{
+			displayName = "All Services"
+			show all rows from Services    
+			(
+				Service_Name as "Service Name"
+				Units
+				Units_Field as "Units Field"
+				Service_Notes_Field as "Service Notes Field"
+				Hours_Unit as "Hours/Unit"
+				Base_Rate as "Base Rate"
+				Merge_Text as "Merge Text"
+				Service_Level as "Service Level"
+				Inactive as "Inactive?"
+				Special_Field as "Special Field?"
+				A_B_C as "A, B, C"
+				ID
+				Rate
+				Option_B_Rate as "Option B Rate"
+				Option_C_Rate as "Option C Rate"
+				Default_Service as "Default Service"
+			)
+			options
+			(
+				icon = "travel-church"
+	 		)
+			quickview
+			(
+				layout
+				(
+		 			type = -1
+					datablock1
+					(
+			 			layout type = -1
+						fields
+						(
+							Service_Name as "Service Name"
+							Units
+							Units_Field as "Units Field"
+							Hours_Unit as "Hours/Unit"
+							Base_Rate as "Base Rate"
+							Option_B_Rate as "Option B Rate"
+							Option_C_Rate as "Option C Rate"
+							Special_Field as "Special Field?"
+							Service_Level as "Service Level"
+							ID
+						)
+					)
+				)
+
+				menu
+    			(
+    	 			header
+    	 			(
+    		 			Edit 
+    		 			Duplicate 
+    		 			Delete 
+    	 			)
+							record
+							(
+								Edit   	   
+								Duplicate   	   
+								Delete   	   
+    						)
+    			)
+    			action
+    			(
+							on click
+							(
+								View Record   	   
+    						)
+							on right click
+							(
+								Edit   	   
+								Delete   	   
+								Duplicate   	   
+								View Record   	   
+    						)
+     			)
+			)
+			detailview
+			(
+				layout
+				(
+		 			type = 1
+					datablock1
+					(
+			 			layout type = -2
+						fields
+						(
+							Service_Name as "Service Name"
+							Units
+							Units_Field as "Units Field"
+							Service_Notes_Field as "Service Notes Field"
+							Hours_Unit as "Hours/Unit"
+							Base_Rate as "Base Rate"
+							Merge_Text as "Merge Text"
+							Service_Level as "Service Level"
+							Inactive as "Inactive?"
+							Special_Field as "Special Field?"
+							A_B_C as "A, B, C"
+							Rate
+							Option_B_Rate as "Option B Rate"
+							Option_C_Rate as "Option C Rate"
+							Default_Service as "Default Service"
+						)
+					)
+				)
+
+				menu
+    			(
+    	 			header
+    	 			(
+    		 			Edit 
+    		 			Duplicate 
+    		 			Delete 
+    	 			)
+    			)
+			)
+		}
+	}
+	section Proposals_Page
+	{
+		displayname= "Proposals Page"
+		icon = "design-webpage"
+				 page Proposals_Page_V2 
+	 	 { 
+ 	 	 displayname = "Proposals Page V2"
+
+ 	 	 icon = "design-webpage" 
+	 	 Content="<zml    \n\t\t\tisPdfEnabled='false'\n\t\t\n\t\t\tisPrintEnabled='false'\n\t\t\n\t\t\n\t\t\n\t\t\n>\n\t<layout>\n\t<row>\n\t<column\n   \t\t width=\"100%\"\n   \t>\n\t<form \n\telementName=\"Form\"\n\n\timportedTemplate = 'false'\n\tappLinkName = 'thisapp'\n\tlinkName = 'Proposal_V2'\n\tallowPublicAccess = 'false'\n\tisCompPublished = 'false'\n\theightType = 'auto'\n\turlType = 'none'\n\tzc_Header = 'false'\n\/> \n<\/column>\n<\/row><row>\n\t<column\n   \t\t width=\"100%\"\n   \t>\n\t<dsp id='html_snippet' elementName=\"HTML Snippet\"\n bgColor=\"#FFFFFF\" \n>\n\t<![CDATA[htmlpage html_snippet()\ncontent\n&lt;%{\n\t%&gt;\n&lt;style&gt;\n.center-v {\n  display: flex;\n  align-items: center;\n}\n.center-h {\n  display: flex; \/* or display:grid *\/\n  justify-content: center;\n}\n  .button {\n        background-color: #1c87c9;\n        border: none;\n        color: white;\n        padding: 12px 20px;\n        text-align: center;\n        text-decoration: none;\n        display: inline-block;\n        font-size: 12px;\n        margin: 4px 2px;\n        cursor: pointer;\n}\n&lt;\/style&gt;\n\n&lt;div class=&quot;center-v center-h&quot;&gt;\n &lt;a href=&quot;#Form:Service_Line_Items?zc_LoadIn=dialog&quot;class=&quot;button&quot;&gt;Add Service&lt;\/a&gt;\n  &lt;div&gt;&lt;\/div&gt;\n&lt;\/div&gt;\n&lt;%\n\n}%&gt;]]>\n<\/dsp>\n<\/column>\n<\/row><row>\n\t<column\n   \t\t width=\"100%\"\n   \t>\n\t<report \n\telementName=\"Report\"\n\n\timportedTemplate = 'false'\n\tappLinkName = 'thisapp'\n\tlinkName = 'All_Service_Line_Items'\n\tallowPublicAccess = 'false'\n\tisCompPublished = 'true'\n\theightType = 'auto'\n\theightValue = '700'\n\tiszreport = 'false'\n            zc_Footer = 'true'\n            zc_AddRec = 'false'\n            zc_EditRec = 'true'\n            zc_Print = 'true'\n            zc_Export = 'true'\n            zc_DelRec = 'true'\n            zc_DuplRec = 'false'\n            zc_Search = 'true'\n\/>\n<\/column>\n<\/row>\n<\/layout>\n<\/zml>" 
+ 	 	}
+				 page Proposals_Page 
+	 	 { 
+ 	 	 displayname = "Proposals Page"
+
+ 	 	 icon = "design-webpage" 
+	 	 Content="<zml    \n\t\t\tisPdfEnabled='false'\n\t\t\n\t\t\tisPrintEnabled='false'\n\t\t\n\t\t\n\t\t\n\t\t\n>\n\t<layout>\n\t<row>\n\t<column\n   \t\t width=\"100%\"\n   \t>\n\t<dsp id='html_snippet' elementName=\"HTML Snippet\"\n bgColor=\"#FFFFFF\" \n>\n\t<![CDATA[htmlpage html_snippet()\ncontent\n&lt;%{\n\t%&gt;\n&lt;iframe height=&apos;3900px&apos; width=&apos;100%&apos; frameborder=&apos;0&apos; allowTransparency=&apos;true&apos; scrolling=&apos;no&apos; src=&apos;https:\/\/creatorapp.zohopublic.com\/zonehelp\/proposal-billing-management\/form-embed\/New_Proposal\/FgbZYhFGzwTxGbBFzkAxA0KeJzjvVCfPCzOPzSTe5EkuHhae3VDUm7EmtQPmnXYy7g4rdgjKXuCdFDDRAykU2hZ6gPfRGFtyFgGS&apos;&gt;&lt;\/iframe&gt;\n&lt;%\n\n}%&gt;]]>\n<\/dsp>\n<\/column>\n<\/row>\n<\/layout>\n<\/zml>" 
+ 	 	}
+	}
+	section Service_Line_Items
+	{
+		displayname= "Service Line Items"
+		icon = "travel-church"
+		form Service_Line_Items
+		{
+			displayname = "Service Line Items"
+			success message = "Service Line Item Added Successfully"
+			field alignment = left
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			Service
+			(
+				type = picklist	
+				values  = Services.ID
+    			displayformat = [Service_Name]
+				sortorder = ascending
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Estimated_Hours
+			(
+				type = decimal
+				displayname = "Estimated Hours"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Rate
+			(
+				type = USD
+				format = commadotwestern
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Total_Cost
+			(
+				displayname = "Total Cost"
+				type = USD
+				format = commadotwestern
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Current_Hours
+			(
+				type = decimal
+				displayname = "Current Hours"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Hours_Balance
+			(
+				type = decimal
+				displayname = "Hours Balance"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Service_Line_Variance
+			(
+    			type = percentage
+				displayname = "Service Line Variance"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Client_Proposal
+			(
+				type = picklist	
+				displayname = "Client Proposal"
+				values  = Client_Proposal.ID
+    			displayformat = [Proposal_Name]
+				sortorder = ascending
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Account
+			(
+				type = picklist	
+				values  = Account.ID
+    			displayformat = [Account_Name]
+				searchable = true
+				sortorder = ascending
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Tier_A_B_C
+			(
+				type = picklist
+				displayname = "Tier (A,B,C)"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Service_Name
+			(
+    			type = text
+				displayname = "Service Name"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Quantity
+			(
+				type = number
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Service_Notes
+			(
+    			type = textarea
+				displayname = "Service Notes"
+				height = 100px
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Proposal_ID
+			(
+				type = number
+				displayname = "Proposal ID"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			customize
+			(
+				icon = "travel-church"
+			)
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		default list All_Service_Line_Items
+		{
+			displayName = "All Service Line Items"
+			show all rows from Service_Line_Items    
+			(
+				Tier_A_B_C as "Tier (A,B,C)"
+				Quantity
+				Rate
+				Total_Cost as "Total Cost"
+				Service_Notes as "Service Notes"
+				Estimated_Hours as "Estimated Hours"
+				Service
+				Client_Proposal as "Client Proposal"
+				Account
+				Service_Name as "Service Name"
+				Current_Hours as "Current Hours"
+				Hours_Balance as "Hours Balance"
+				Proposal_ID as "Proposal ID"
+				Service_Line_Variance as "Service Line Variance"
+			)
+			options
+			(
+				icon = "travel-world"
+	 		)
+			quickview
+			(
+				layout
+				(
+		 			type = -1
+					datablock1
+					(
+			 			layout type = -1
+						fields
+						(
+							Tier_A_B_C as "Tier (A,B,C)"
+							Quantity
+							Rate
+							Total_Cost as "Total Cost"
+							Service_Notes as "Service Notes"
+							Estimated_Hours as "Estimated Hours"
+							Current_Hours as "Current Hours"
+							Hours_Balance as "Hours Balance"
+							Service
+							Service_Line_Variance as "Service Line Variance"
+						)
+					)
+				)
+
+				menu
+    			(
+    	 			header
+    	 			(
+    		 			Edit 
+    		 			Duplicate 
+    		 			Delete 
+    	 			)
+							record
+							(
+								Edit   	   
+								Duplicate   	   
+								Delete   	   
+    						)
+    			)
+    			action
+    			(
+							on click
+							(
+								View Record   	   
+    						)
+							on right click
+							(
+								Edit   	   
+								Delete   	   
+								Duplicate   	   
+								View Record   	   
+    						)
+     			)
+			)
+			detailview
+			(
+				layout
+				(
+		 			type = 1
+					datablock1
+					(
+			 			layout type = -2
+						fields
+						(
+							Tier_A_B_C as "Tier (A,B,C)"
+							Quantity
+							Rate
+							Total_Cost as "Total Cost"
+							Service_Notes as "Service Notes"
+							Estimated_Hours as "Estimated Hours"
+							Service
+							Client_Proposal as "Client Proposal"
+							Account
+							Service_Name as "Service Name"
+							Current_Hours as "Current Hours"
+							Hours_Balance as "Hours Balance"
+							Proposal_ID as "Proposal ID"
+							Service_Line_Variance as "Service Line Variance"
+						)
+					)
+				)
+
+				menu
+    			(
+    	 			header
+    	 			(
+    		 			Edit 
+    		 			Duplicate 
+    		 			Delete 
+    	 			)
+    			)
+			)
+		}
+	}
+	section Proposal_V2
+	{
+		displayname= "Proposal V2"
+		default list Proposal_V2_Report
+		{
+			displayName = "Proposal V2 Report"
+   			hide = true
+			show all rows from Proposal_V2    
+			(
+				Proposal_Name as "Proposal Name"
+				Contact
+				Deal
+				Proposal_FolUp_WF as "Proposal FolUp-WF"
+				No_First_FU_WF_Email as "No First FU WF Email"
+				Account
+				Email
+				Edition
+				Business_Needs1 as "Business Needs"
+				Workdrive_Folder_URL as "Workdrive Folder URL"
+				Option_A as "Option A"
+				Option_B as "Option B"
+				Option_C as "Option C"
+				Lagniappe
+				Option_A_EstimHours2 as "Option A EstimHours"
+				Option_B_EstimHours as "Option B EstimHours"
+				Option_C_EstimHours as "Option C EstimHours"
+				Multiplier
+				Selected
+				Selected_Hours as "Selected Hours"
+				Selected_Amount as "Selected Amount"
+				Bus_Needs_1 as "Bus Needs 1"
+				Bus_Needs_2 as "Bus Needs 2"
+				Bus_Needs_3 as "Bus Needs 3"
+				Other_Thoughts as "Other Thoughts"
+				Ideal_Outcome as "Ideal Outcome"
+				Hide_Basic_Services as "Hide Basic Services"
+				Initial_Meeting as "Initial Meeting"
+				Analyze_Existing_Data as "Analyze Existing Data"
+				Define_Security as "Define Security"
+				Basic_DB_Design as "Basic DB Design"
+				Import_Basic_Data as "Import Basic Data"
+				Data_Seg_Views as "Data Seg / Views"
+				End_User_Training as "End User Training"
+				Hide_Intermediate_Services as "Hide Intermediate Services"
+				Elaborate_Data_Migration as "Elaborate Data Migration"
+				Clean_Up_Views as "Clean Up Views"
+				Adv_Design_Custom_Mod as "Adv Design-Custom Mod"
+				Num_Custom_Modules as "Num Custom Modules"
+				Custom_Module_Notes as "Custom Module Notes"
+				Add_Layout_Rules as "Add Layout Rules"
+				Layout_Rule_Notes as "Layout Rule Notes"
+				Workflow_Rules as "Workflow Rules"
+				Num_WF_Rules as "Num WF Rules"
+				Workflow_Rule_Notes as "Workflow Rule Notes"
+				Create_Email_Templates as "Create Email Templates"
+				Num_Email_Templates as "Num Email Templates"
+				Email_Template_Notes as "Email Template Notes"
+				Remote_Work_Bundle_Cliq_Connect_Workdrive_Meeting as "Remote Work Bundle Cliq/Connect/Workdrive/Meeting"
+				Bookings
+				Check_In_Meetings as "Check In Meetings"
+				Num_Meetings as "Num Meetings"
+				Basic_Reports as "Basic Reports"
+				Add_l_Report_Notes as "Add'l Report Notes"
+				KPI_Dashboard as "KPI Dashboard"
+				Company_Home_Page as "Company Home Page"
+				Email_Setup as "Email Setup"
+				Email_Software as "Email Software"
+				Zoho_Mail_Setup as "Zoho Mail Setup"
+				Webform_Simple_Forms as "Webform/Simple Forms"
+				Num_Webforms as "Num Webforms"
+				Support
+				Spec_Request_Title as "Spec Request Title"
+				Spec_Request_Details as "Spec Request Details"
+				Spec_Req_Pricing as "Spec Req Pricing"
+				Spec_Request_Hrs as "Spec Request Hrs"
+				Hide_Advanced_Services as "Hide Advanced Services"
+				Role_Security as "Role Security"
+				Adv_Custom_Functions as "Adv Custom Functions"
+				Num_CF as "Num CF"
+				CF_Notes as "CF Notes"
+				Campaigns_MH_Integration as "Campaigns/MH Integration"
+				Campaigns_MH_Training as "Campaigns/MH Training"
+				Social
+				Sign_Integ_Training as "Sign Integ / Training"
+				SalesIQ_Integ_Training as "SalesIQ Integ / Training"
+				Zobots
+				Zobot_Notes as "Zobot Notes"
+				Zobot_Pricing as "Zobot Pricing"
+				Desk_Integ_Training as "Desk Integ / Training"
+				Books_Integ_Training as "Books Integ / Training"
+				Inventory
+				People
+				Performance_Evaluations as "Performance Evaluations"
+				Recruit
+				Complicated_Forms as "Complicated Forms"
+				Num_Forms as "Num Forms"
+				Survey
+				Projects
+				Adv_Analytics as "Adv Analytics"
+				Adv_Analytics_Notes as "Adv Analytics Notes"
+				Num_AA_Reports as "Num AA Reports"
+				Pilot_Testing as "Pilot Testing"
+				Documentation
+				Spec_Req_C as "Spec Req C"
+				Spec_Req_C_Details as "Spec Req C Details"
+				Spec_Req_C_Pricing as "Spec Req C Pricing"
+				Spec_Req_C_Hours as "Spec Req C Hours"
+				Follow_Up_User_Training as "Follow Up User Training"
+				Admin_Basic_Training as "Admin Basic Training"
+				Admin_Adv_Training as "Admin Adv Training"
+			)
+			quickview
+			(
+				layout
+				(
+		 			type = -1
+					datablock1
+					(
+			 			layout type = -1
+						fields
+						(
+							Proposal_Name as "Proposal Name"
+							Contact
+							Deal
+							Proposal_FolUp_WF as "Proposal FolUp-WF"
+							No_First_FU_WF_Email as "No First FU WF Email"
+							Account
+							Email
+							Edition
+							Business_Needs1 as "Business Needs"
+							Workdrive_Folder_URL as "Workdrive Folder URL"
+							Option_A as "Option A"
+							Option_B as "Option B"
+							Option_C as "Option C"
+							Lagniappe
+							Option_A_EstimHours2 as "Option A EstimHours"
+							Option_B_EstimHours as "Option B EstimHours"
+							Option_C_EstimHours as "Option C EstimHours"
+							Multiplier
+							Selected
+							Selected_Hours as "Selected Hours"
+							Selected_Amount as "Selected Amount"
+							Bus_Needs_1 as "Bus Needs 1"
+							Bus_Needs_2 as "Bus Needs 2"
+							Bus_Needs_3 as "Bus Needs 3"
+							Other_Thoughts as "Other Thoughts"
+							Ideal_Outcome as "Ideal Outcome"
+							Hide_Basic_Services as "Hide Basic Services"
+							Initial_Meeting as "Initial Meeting"
+							Analyze_Existing_Data as "Analyze Existing Data"
+							Define_Security as "Define Security"
+							Basic_DB_Design as "Basic DB Design"
+							Import_Basic_Data as "Import Basic Data"
+							Data_Seg_Views as "Data Seg / Views"
+							End_User_Training as "End User Training"
+							Hide_Intermediate_Services as "Hide Intermediate Services"
+							Elaborate_Data_Migration as "Elaborate Data Migration"
+							Clean_Up_Views as "Clean Up Views"
+							Adv_Design_Custom_Mod as "Adv Design-Custom Mod"
+							Num_Custom_Modules as "Num Custom Modules"
+							Custom_Module_Notes as "Custom Module Notes"
+							Add_Layout_Rules as "Add Layout Rules"
+							Layout_Rule_Notes as "Layout Rule Notes"
+							Workflow_Rules as "Workflow Rules"
+							Num_WF_Rules as "Num WF Rules"
+							Workflow_Rule_Notes as "Workflow Rule Notes"
+							Create_Email_Templates as "Create Email Templates"
+							Num_Email_Templates as "Num Email Templates"
+							Email_Template_Notes as "Email Template Notes"
+							Remote_Work_Bundle_Cliq_Connect_Workdrive_Meeting as "Remote Work Bundle Cliq/Connect/Workdrive/Meeting"
+							Bookings
+							Check_In_Meetings as "Check In Meetings"
+							Num_Meetings as "Num Meetings"
+							Basic_Reports as "Basic Reports"
+							Add_l_Report_Notes as "Add'l Report Notes"
+							KPI_Dashboard as "KPI Dashboard"
+							Company_Home_Page as "Company Home Page"
+							Email_Setup as "Email Setup"
+							Email_Software as "Email Software"
+							Zoho_Mail_Setup as "Zoho Mail Setup"
+							Webform_Simple_Forms as "Webform/Simple Forms"
+							Num_Webforms as "Num Webforms"
+							Support
+							Spec_Request_Title as "Spec Request Title"
+							Spec_Request_Details as "Spec Request Details"
+							Spec_Req_Pricing as "Spec Req Pricing"
+							Spec_Request_Hrs as "Spec Request Hrs"
+							Hide_Advanced_Services as "Hide Advanced Services"
+							Role_Security as "Role Security"
+							Adv_Custom_Functions as "Adv Custom Functions"
+							Num_CF as "Num CF"
+							CF_Notes as "CF Notes"
+							Campaigns_MH_Integration as "Campaigns/MH Integration"
+							Campaigns_MH_Training as "Campaigns/MH Training"
+							Social
+							Sign_Integ_Training as "Sign Integ / Training"
+							SalesIQ_Integ_Training as "SalesIQ Integ / Training"
+							Zobots
+							Zobot_Notes as "Zobot Notes"
+							Zobot_Pricing as "Zobot Pricing"
+							Desk_Integ_Training as "Desk Integ / Training"
+							Books_Integ_Training as "Books Integ / Training"
+							Inventory
+							People
+							Performance_Evaluations as "Performance Evaluations"
+							Recruit
+							Complicated_Forms as "Complicated Forms"
+							Num_Forms as "Num Forms"
+							Survey
+							Projects
+							Adv_Analytics as "Adv Analytics"
+							Adv_Analytics_Notes as "Adv Analytics Notes"
+							Num_AA_Reports as "Num AA Reports"
+							Pilot_Testing as "Pilot Testing"
+							Documentation
+							Spec_Req_C as "Spec Req C"
+							Spec_Req_C_Details as "Spec Req C Details"
+							Spec_Req_C_Pricing as "Spec Req C Pricing"
+							Spec_Req_C_Hours as "Spec Req C Hours"
+							Follow_Up_User_Training as "Follow Up User Training"
+							Admin_Basic_Training as "Admin Basic Training"
+							Admin_Adv_Training as "Admin Adv Training"
+						)
+					)
+				)
+
+				menu
+    			(
+    	 			header
+    	 			(
+    		 			Edit 
+    		 			Duplicate 
+    		 			Delete 
+    		 			Add 
+    		 			Print 
+    		 			Import 
+    		 			Export 
+    	 			)
+							record
+							(
+								Edit   	   
+								Duplicate   	   
+								Print   	   
+								Delete   	   
+    						)
+    			)
+    			action
+    			(
+							on click
+							(
+								View Record   	   
+    						)
+							on right click
+							(
+								Edit   	   
+								Delete   	   
+								Duplicate   	   
+								Print   	   
+								View Record   	   
+    						)
+     			)
+			)
+			detailview
+			(
+				layout
+				(
+		 			type = 1
+					datablock1
+					(
+			 			layout type = -2
+						fields
+						(
+							Proposal_Name as "Proposal Name"
+							Contact
+							Deal
+							Proposal_FolUp_WF as "Proposal FolUp-WF"
+							No_First_FU_WF_Email as "No First FU WF Email"
+							Account
+							Email
+							Edition
+							Business_Needs1 as "Business Needs"
+							Workdrive_Folder_URL as "Workdrive Folder URL"
+							Option_A as "Option A"
+							Option_B as "Option B"
+							Option_C as "Option C"
+							Lagniappe
+							Option_A_EstimHours2 as "Option A EstimHours"
+							Option_B_EstimHours as "Option B EstimHours"
+							Option_C_EstimHours as "Option C EstimHours"
+							Multiplier
+							Selected
+							Selected_Hours as "Selected Hours"
+							Selected_Amount as "Selected Amount"
+							Bus_Needs_1 as "Bus Needs 1"
+							Bus_Needs_2 as "Bus Needs 2"
+							Bus_Needs_3 as "Bus Needs 3"
+							Other_Thoughts as "Other Thoughts"
+							Ideal_Outcome as "Ideal Outcome"
+							Hide_Basic_Services as "Hide Basic Services"
+							Initial_Meeting as "Initial Meeting"
+							Analyze_Existing_Data as "Analyze Existing Data"
+							Define_Security as "Define Security"
+							Basic_DB_Design as "Basic DB Design"
+							Import_Basic_Data as "Import Basic Data"
+							Data_Seg_Views as "Data Seg / Views"
+							End_User_Training as "End User Training"
+							Hide_Intermediate_Services as "Hide Intermediate Services"
+							Elaborate_Data_Migration as "Elaborate Data Migration"
+							Clean_Up_Views as "Clean Up Views"
+							Adv_Design_Custom_Mod as "Adv Design-Custom Mod"
+							Num_Custom_Modules as "Num Custom Modules"
+							Custom_Module_Notes as "Custom Module Notes"
+							Add_Layout_Rules as "Add Layout Rules"
+							Layout_Rule_Notes as "Layout Rule Notes"
+							Workflow_Rules as "Workflow Rules"
+							Num_WF_Rules as "Num WF Rules"
+							Workflow_Rule_Notes as "Workflow Rule Notes"
+							Create_Email_Templates as "Create Email Templates"
+							Num_Email_Templates as "Num Email Templates"
+							Email_Template_Notes as "Email Template Notes"
+							Remote_Work_Bundle_Cliq_Connect_Workdrive_Meeting as "Remote Work Bundle Cliq/Connect/Workdrive/Meeting"
+							Bookings
+							Check_In_Meetings as "Check In Meetings"
+							Num_Meetings as "Num Meetings"
+							Basic_Reports as "Basic Reports"
+							Add_l_Report_Notes as "Add'l Report Notes"
+							KPI_Dashboard as "KPI Dashboard"
+							Company_Home_Page as "Company Home Page"
+							Email_Setup as "Email Setup"
+							Email_Software as "Email Software"
+							Zoho_Mail_Setup as "Zoho Mail Setup"
+							Webform_Simple_Forms as "Webform/Simple Forms"
+							Num_Webforms as "Num Webforms"
+							Support
+							Spec_Request_Title as "Spec Request Title"
+							Spec_Request_Details as "Spec Request Details"
+							Spec_Req_Pricing as "Spec Req Pricing"
+							Spec_Request_Hrs as "Spec Request Hrs"
+							Hide_Advanced_Services as "Hide Advanced Services"
+							Role_Security as "Role Security"
+							Adv_Custom_Functions as "Adv Custom Functions"
+							Num_CF as "Num CF"
+							CF_Notes as "CF Notes"
+							Campaigns_MH_Integration as "Campaigns/MH Integration"
+							Campaigns_MH_Training as "Campaigns/MH Training"
+							Social
+							Sign_Integ_Training as "Sign Integ / Training"
+							SalesIQ_Integ_Training as "SalesIQ Integ / Training"
+							Zobots
+							Zobot_Notes as "Zobot Notes"
+							Zobot_Pricing as "Zobot Pricing"
+							Desk_Integ_Training as "Desk Integ / Training"
+							Books_Integ_Training as "Books Integ / Training"
+							Inventory
+							People
+							Performance_Evaluations as "Performance Evaluations"
+							Recruit
+							Complicated_Forms as "Complicated Forms"
+							Num_Forms as "Num Forms"
+							Survey
+							Projects
+							Adv_Analytics as "Adv Analytics"
+							Adv_Analytics_Notes as "Adv Analytics Notes"
+							Num_AA_Reports as "Num AA Reports"
+							Pilot_Testing as "Pilot Testing"
+							Documentation
+							Spec_Req_C as "Spec Req C"
+							Spec_Req_C_Details as "Spec Req C Details"
+							Spec_Req_C_Pricing as "Spec Req C Pricing"
+							Spec_Req_C_Hours as "Spec Req C Hours"
+							Follow_Up_User_Training as "Follow Up User Training"
+							Admin_Basic_Training as "Admin Basic Training"
+							Admin_Adv_Training as "Admin Adv Training"
+						)
+					)
+				)
+
+				menu
+    			(
+    	 			header
+    	 			(
+    		 			Edit 
+    		 			Duplicate 
+    		 			Print 
+    		 			Delete 
+    	 			)
+    			)
+			)
+		}
+		form Proposal_V2
+		{
+			displayname = "Proposal V2"
+			success message = "Proposal Added Successfully"
+			field alignment = left
+					hide = true
+			Section4
+			(
+				type = section
+				displayname = "Section"
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			css
+			(
+    			type = plaintext
+				value = "<div> <br /></div>"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Proposal_Information
+			(
+				type = section
+				displayname = "Proposal Information"
+				visibility = true
+	 			row = 2
+	 			column = 0   
+				width = medium
+			)
+			Proposal_Name
+			(
+    			type = text
+				displayname = "Proposal Name"
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Contact
+			(
+				type = picklist	
+				datasource = contacts
+				displayformat = [first_name + last_name]
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Deal
+			(
+				type = picklist	
+				datasource = deals
+				displayformat = [potential_name]
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Proposal_FolUp_WF
+			(
+				type = picklist
+				displayname = "Proposal FolUp-WF"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			No_First_FU_WF_Email
+			(
+    			type = checkbox
+				displayname = "No First FU WF Email"
+				initial value = false
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Account
+			(
+				type = picklist	
+				datasource = accounts
+				displayformat = [account_name]
+	 			row = 2
+	 			column = 2   
+				width = medium
+			)
+			Email
+			(
+    			type = email
+				maxchar = 80
+	 			row = 2
+	 			column = 2   
+				width = medium
+				personal data = true
+			)
+			Edition
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 2
+	 			column = 2   
+				width = medium
+			)
+			Business_Needs1
+			(
+				type = list	
+				displayname = "Business Needs"
+				values = {"Choice 1","Choice 2","Choice 3"}
+				height = 60px
+	 			row = 2
+	 			column = 2   
+				width = medium
+			)
+			Workdrive_Folder_URL
+			(
+    			type = text
+				displayname = "Workdrive Folder URL"
+	 			row = 2
+	 			column = 2   
+				width = medium
+			)
+			Proposal_Summary
+			(
+				type = section
+				displayname = "Proposal Summary"
+				visibility = true
+	 			row = 3
+	 			column = 0   
+				width = medium
+			)
+			Option_A
+			(
+				displayname = "Option A"
+				type = USD
+				format = commadotwestern
+	 			row = 3
+	 			column = 1   
+				width = medium
+			)
+			Option_B
+			(
+				displayname = "Option B"
+				type = USD
+				format = commadotwestern
+	 			row = 3
+	 			column = 1   
+				width = medium
+			)
+			Option_C
+			(
+				displayname = "Option C"
+				type = USD
+				format = commadotwestern
+	 			row = 3
+	 			column = 1   
+				width = medium
+			)
+			Lagniappe
+			(
+				type = USD
+				format = commadotwestern
+	 			row = 3
+	 			column = 1   
+				width = medium
+			)
+			Option_A_EstimHours2
+			(
+				type = decimal
+				displayname = "Option A EstimHours"
+	 			row = 3
+	 			column = 2   
+				width = medium
+			)
+			Option_B_EstimHours
+			(
+				type = decimal
+				displayname = "Option B EstimHours"
+	 			row = 3
+	 			column = 2   
+				width = medium
+			)
+			Option_C_EstimHours
+			(
+				type = decimal
+				displayname = "Option C EstimHours"
+	 			row = 3
+	 			column = 2   
+				width = medium
+			)
+			Multiplier
+			(
+				type = decimal
+	 			row = 3
+	 			column = 2   
+				width = medium
+			)
+			Section
+			(
+				type = section
+	 			row = 4
+	 			column = 0   
+				width = medium
+			)
+			plain
+			(
+    			type = plaintext
+				value = "<div><br /></div>"
+	 			row = 4
+	 			column = 1   
+				width = medium
+			)
+			Proposal_Finalization
+			(
+				type = section
+				displayname = "Proposal Finalization"
+	 			row = 5
+	 			column = 0   
+				width = medium
+			)
+			Selected
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 5
+	 			column = 1   
+				width = medium
+			)
+			Selected_Hours
+			(
+				type = decimal
+				displayname = "Selected Hours"
+	 			row = 5
+	 			column = 2   
+				width = medium
+			)
+			Selected_Amount
+			(
+				displayname = "Selected Amount"
+				type = USD
+				format = commadotwestern
+	 			row = 5
+	 			column = 3   
+				width = medium
+			)
+			Business_Needs
+			(
+				type = section
+				displayname = "Business Needs"
+				visibility = true
+	 			row = 6
+	 			column = 0   
+				width = medium
+			)
+			Bus_Needs_1
+			(
+    			type = text
+				displayname = "Bus Needs 1"
+	 			row = 6
+	 			column = 1   
+				width = medium
+			)
+			Bus_Needs_2
+			(
+    			type = text
+				displayname = "Bus Needs 2"
+	 			row = 6
+	 			column = 1   
+				width = medium
+			)
+			Bus_Needs_3
+			(
+    			type = text
+				displayname = "Bus Needs 3"
+	 			row = 6
+	 			column = 1   
+				width = medium
+			)
+			Other_Thoughts
+			(
+    			type = text
+				displayname = "Other Thoughts"
+	 			row = 6
+	 			column = 2   
+				width = medium
+			)
+			Ideal_Outcome
+			(
+    			type = textarea
+				displayname = "Ideal Outcome"
+				height = 100px
+	 			row = 6
+	 			column = 2   
+				width = medium
+			)
+			Section1
+			(
+				type = section
+				displayname = "Section"
+	 			row = 7
+	 			column = 0   
+				width = medium
+			)
+			plain1
+			(
+    			type = plaintext
+				value = "<div><br /></div>"
+	 			row = 7
+	 			column = 1   
+				width = medium
+			)
+			Hide_Basic_Services
+			(
+    			type = checkbox
+				displayname = "Hide Basic Services"
+				initial value = false
+	 			row = 7
+	 			column = 1   
+				width = medium
+			)
+			Basic_Services
+			(
+				type = section
+				displayname = "Basic Services"
+				visibility = true
+	 			row = 8
+	 			column = 0   
+				width = medium
+			)
+			Initial_Meeting
+			(
+				type = picklist
+				displayname = "Initial Meeting"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 8
+	 			column = 1   
+				width = medium
+			)
+			Analyze_Existing_Data
+			(
+				type = picklist
+				displayname = "Analyze Existing Data"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 8
+	 			column = 1   
+				width = medium
+			)
+			Define_Security
+			(
+				type = picklist
+				displayname = "Define Security"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 8
+	 			column = 1   
+				width = medium
+			)
+			Basic_DB_Design
+			(
+				type = picklist
+				displayname = "Basic DB Design"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 8
+	 			column = 1   
+				width = medium
+			)
+			Import_Basic_Data
+			(
+				type = picklist
+				displayname = "Import Basic Data"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 8
+	 			column = 2   
+				width = medium
+			)
+			Data_Seg_Views
+			(
+				type = picklist
+				displayname = "Data Seg / Views"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 8
+	 			column = 2   
+				width = medium
+			)
+			End_User_Training
+			(
+				type = picklist
+				displayname = "End User Training"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 8
+	 			column = 2   
+				width = medium
+			)
+			Section2
+			(
+				type = section
+				displayname = "Section"
+	 			row = 9
+	 			column = 0   
+				width = medium
+			)
+			plain2
+			(
+    			type = plaintext
+				value = "<div><br /></div>"
+	 			row = 9
+	 			column = 1   
+				width = medium
+			)
+			Hide_Intermediate_Services
+			(
+    			type = checkbox
+				displayname = "Hide Intermediate Services"
+				initial value = false
+	 			row = 9
+	 			column = 1   
+				width = medium
+			)
+			Intermediate_Services
+			(
+				type = section
+				displayname = "Intermediate Services"
+				visibility = true
+	 			row = 10
+	 			column = 0   
+				width = medium
+			)
+			Elaborate_Data_Migration
+			(
+				type = picklist
+				displayname = "Elaborate Data Migration"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Clean_Up_Views
+			(
+				type = picklist
+				displayname = "Clean Up Views"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Adv_Design_Custom_Mod
+			(
+				type = picklist
+				displayname = "Adv Design-Custom Mod"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Num_Custom_Modules
+			(
+				type = picklist
+				displayname = "Num Custom Modules"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Custom_Module_Notes
+			(
+    			type = text
+				displayname = "Custom Module Notes"
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Add_Layout_Rules
+			(
+				type = picklist
+				displayname = "Add Layout Rules"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Layout_Rule_Notes
+			(
+    			type = text
+				displayname = "Layout Rule Notes"
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Workflow_Rules
+			(
+				type = picklist
+				displayname = "Workflow Rules"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Num_WF_Rules
+			(
+				type = picklist
+				displayname = "Num WF Rules"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Workflow_Rule_Notes
+			(
+    			type = text
+				displayname = "Workflow Rule Notes"
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Create_Email_Templates
+			(
+				type = picklist
+				displayname = "Create Email Templates"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Num_Email_Templates
+			(
+				type = picklist
+				displayname = "Num Email Templates"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Email_Template_Notes
+			(
+    			type = text
+				displayname = "Email Template Notes"
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Remote_Work_Bundle_Cliq_Connect_Workdrive_Meeting
+			(
+				type = picklist
+				displayname = "Remote Work Bundle Cliq/Connect/Workdrive/Meeting"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Bookings
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Check_In_Meetings
+			(
+				type = picklist
+				displayname = "Check In Meetings"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Num_Meetings
+			(
+				type = picklist
+				displayname = "Num Meetings"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Basic_Reports
+			(
+				type = picklist
+				displayname = "Basic Reports"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Add_l_Report_Notes
+			(
+    			type = text
+				displayname = "Add'l Report Notes"
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			KPI_Dashboard
+			(
+				type = picklist
+				displayname = "KPI Dashboard"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Company_Home_Page
+			(
+				type = picklist
+				displayname = "Company Home Page"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Email_Setup
+			(
+				type = picklist
+				displayname = "Email Setup"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Email_Software
+			(
+				type = picklist
+				displayname = "Email Software"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Zoho_Mail_Setup
+			(
+				type = picklist
+				displayname = "Zoho Mail Setup"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Webform_Simple_Forms
+			(
+				type = picklist
+				displayname = "Webform/Simple Forms"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Num_Webforms
+			(
+				type = number
+				displayname = "Num Webforms"
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Support
+			(
+				type = list	
+				values = {"Choice 1","Choice 2","Choice 3"}
+				height = 60px
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Spec_Request_Title
+			(
+    			type = text
+				displayname = "Spec Request Title"
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Spec_Request_Details
+			(
+    			type = textarea
+				displayname = "Spec Request Details"
+				height = 100px
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Spec_Req_Pricing
+			(
+				displayname = "Spec Req Pricing"
+				type = USD
+				format = commadotwestern
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Spec_Request_Hrs
+			(
+				type = number
+				displayname = "Spec Request Hrs"
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Section3
+			(
+				type = section
+				displayname = "Section"
+	 			row = 11
+	 			column = 0   
+				width = medium
+			)
+			plain3
+			(
+    			type = plaintext
+				value = "<div><br /></div>"
+	 			row = 11
+	 			column = 1   
+				width = medium
+			)
+			Hide_Advanced_Services
+			(
+    			type = checkbox
+				displayname = "Hide Advanced Services"
+				initial value = false
+	 			row = 11
+	 			column = 1   
+				width = medium
+			)
+			Advanced_Services
+			(
+				type = section
+				displayname = "Advanced Services"
+				visibility = true
+	 			row = 12
+	 			column = 0   
+				width = medium
+			)
+			Role_Security
+			(
+				type = picklist
+				displayname = "Role Security"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Adv_Custom_Functions
+			(
+				type = picklist
+				displayname = "Adv Custom Functions"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Num_CF
+			(
+				type = number
+				displayname = "Num CF"
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			CF_Notes
+			(
+    			type = text
+				displayname = "CF Notes"
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Campaigns_MH_Integration
+			(
+				type = picklist
+				displayname = "Campaigns/MH Integration"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Campaigns_MH_Training
+			(
+				type = picklist
+				displayname = "Campaigns/MH Training"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Social
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Sign_Integ_Training
+			(
+				type = picklist
+				displayname = "Sign Integ / Training"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			SalesIQ_Integ_Training
+			(
+				type = picklist
+				displayname = "SalesIQ Integ / Training"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Zobots
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Zobot_Notes
+			(
+    			type = text
+				displayname = "Zobot Notes"
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Zobot_Pricing
+			(
+				type = number
+				displayname = "Zobot Pricing"
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Desk_Integ_Training
+			(
+				type = picklist
+				displayname = "Desk Integ / Training"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Books_Integ_Training
+			(
+				type = picklist
+				displayname = "Books Integ / Training"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Inventory
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			People
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Performance_Evaluations
+			(
+				type = picklist
+				displayname = "Performance Evaluations"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Recruit
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Complicated_Forms
+			(
+				type = picklist
+				displayname = "Complicated Forms"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Num_Forms
+			(
+				type = number
+				displayname = "Num Forms"
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Survey
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Projects
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Adv_Analytics
+			(
+				type = picklist
+				displayname = "Adv Analytics"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Adv_Analytics_Notes
+			(
+    			type = text
+				displayname = "Adv Analytics Notes"
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Num_AA_Reports
+			(
+				type = number
+				displayname = "Num AA Reports"
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Pilot_Testing
+			(
+				type = picklist
+				displayname = "Pilot Testing"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Documentation
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Spec_Req_C
+			(
+    			type = text
+				displayname = "Spec Req C"
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Spec_Req_C_Details
+			(
+    			type = textarea
+				displayname = "Spec Req C Details"
+				height = 100px
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Spec_Req_C_Pricing
+			(
+				displayname = "Spec Req C Pricing"
+				type = USD
+				format = commadotwestern
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Spec_Req_C_Hours
+			(
+				type = number
+				displayname = "Spec Req C Hours"
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Follow_Up_User_Training
+			(
+				type = picklist
+				displayname = "Follow Up User Training"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Admin_Basic_Training
+			(
+				type = picklist
+				displayname = "Admin Basic Training"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Admin_Adv_Training
+			(
+				type = picklist
+				displayname = "Admin Adv Training"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Custom_Development_Requests
+			(
+				type = grid
+				displayname = "Custom Development Requests"
+				Development_Request_Name
+				(
+    				type = text
+					displayname = "Development Request Name"
+					width = medium
+				)
+				Development_Request_Type
+				(
+					type = picklist
+					displayname = "Development Request Type"
+					maxchar = 100
+					values = {"Choice 1","Choice 2","Choice 3"}
+					width = medium
+				)
+				A_B_or_C
+				(
+					type = picklist
+					displayname = "A, B, or C"
+					maxchar = 100
+					values = {"Choice 1","Choice 2","Choice 3"}
+					width = medium
+				)
+				Hours
+				(
+					type = number
+					width = medium
+				)
+				Rate
+				(
+					type = number
+					width = medium
+				)
+				Development_Request_Total
+				(
+					displayname = "Development Request Total"
+					type = USD
+					format = commadotwestern
+					width = medium
+				)
+	 			row = 13
+	 			column = 1   
+				width = medium
+			)
+			Services_Test
+			(
+				type = grid
+				displayname = "Services (Test)"
+				Service
+				(
+					type = picklist
+					maxchar = 100
+					values = {"Choice 1","Choice 2","Choice 3"}
+					width = medium
+				)
+				Tier_A_B_C
+				(
+					type = picklist
+					displayname = "Tier (A,B,C)"
+					maxchar = 100
+					values = {"Choice 1","Choice 2","Choice 3"}
+					width = medium
+				)
+				Quantity
+				(
+					type = number
+					width = medium
+				)
+				Rate
+				(
+					type = USD
+					format = commadotwestern
+					width = medium
+				)
+				Total
+				(
+					type = USD
+					format = commadotwestern
+					width = medium
+				)
+				Service_Notes
+				(
+    				type = textarea
+					displayname = "Service Notes"
+					height = 100px
+					width = medium
+				)
+	 			row = 14
+	 			column = 1   
+				width = medium
+			)
+			Service_List_A
+			(
+				type = grid
+				displayname = "Service List A"
+				private = true
+	 			row = 15
+	 			column = 1   
+				width = medium
+			)
+			Service_List_B
+			(
+				type = grid
+				displayname = "Service List B"
+				private = true
+	 			row = 16
+	 			column = 1   
+				width = medium
+			)
+			Service_List_C
+			(
+				type = grid
+				displayname = "Service List C"
+				private = true
+	 			row = 17
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+	}
+	section Accounts
+	{
+		icon = "business-calculator"
+		form Account
+		{
+			success message = "Account Added Successfully"
+			field alignment = left
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			Account_Name
+			(
+    			type = text
+				displayname = "Account Name"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Retainer_Balance
+			(
+				displayname = "Retainer Balance"
+				type = USD
+				format = commadotwestern
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Hours_Balance
+			(
+				type = decimal
+				displayname = "Hours Balance"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Retainer_Used
+			(
+				displayname = "Retainer Used"
+				type = USD
+				format = commadotwestern
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Retainer_Paid
+			(
+				displayname = "Retainer Paid"
+				type = USD
+				format = commadotwestern
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Unpaid_Total
+			(
+				displayname = "Unpaid Total"
+				type = USD
+				format = commadotwestern
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Total_Hours_Billed
+			(
+				type = decimal
+				displayname = "Total Hours Billed"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Proposal_Hours_Billed
+			(
+				type = decimal
+				displayname = "Proposal Hours Billed"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Total_Proposal_Hours
+			(
+				type = decimal
+				displayname = "Total Proposal Hours"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Proposal_Hours_Variance
+			(
+    			type = percentage
+				displayname = "Proposal Hours Variance"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Primary_Consultant
+			(
+				type = picklist	
+				displayname = "Primary Consultant"
+				values  = Staff.ID
+    			displayformat = [" " + Staff_Name.prefix + " " + Staff_Name.first_name + " " + Staff_Name.last_name + " " + Staff_Name.suffix]
+				sortorder = ascending
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			customize
+			(
+				icon = "shopping-cash-register"
+			)
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		default list All_Accounts
+		{
+			displayName = "All Accounts"
+			show all rows from Account    
+			(
+				Account_Name as "Account Name"
+				Retainer_Balance as "Retainer Balance"
+				Retainer_Used as "Retainer Used"
+				Retainer_Paid as "Retainer Paid"
+				Proposal_Hours_Variance as "Proposal Hours Variance"
+				Primary_Consultant as "Primary Consultant"
+				Unpaid_Total as "Unpaid Total"
+				Total_Hours_Billed as "Total Hours Billed"
+				Total_Proposal_Hours as "Total Proposal Hours"
+				Proposal_Hours_Billed as "Proposal Hours Billed"
+				Hours_Balance as "Hours Balance"
+			)
+			options
+			(
+				icon = "travel-world"
+	 		)
+			quickview
+			(
+				layout
+				(
+		 			type = -1
+					datablock1
+					(
+			 			layout type = -1
+						fields
+						(
+							Account_Name as "Account Name"
+							Unpaid_Total as "Unpaid Total"
+							Retainer_Balance as "Retainer Balance"
+							Hours_Balance as "Hours Balance"
+							Retainer_Paid as "Retainer Paid"
+							Retainer_Used as "Retainer Used"
+							Total_Hours_Billed as "Total Hours Billed"
+							Total_Proposal_Hours as "Total Proposal Hours"
+							Proposal_Hours_Billed as "Proposal Hours Billed"
+							Proposal_Hours_Variance as "Proposal Hours Variance"
+							Primary_Consultant as "Primary Consultant"
+						)
+					)
+				)
+
+				menu
+    			(
+    	 			header
+    	 			(
+    		 			Edit 
+    		 			Duplicate 
+    		 			Delete 
+    	 			)
+							record
+							(
+								Edit   	   
+								Duplicate   	   
+								Delete   	   
+    						)
+    			)
+    			action
+    			(
+							on click
+							(
+								View Record   	   
+    						)
+							on right click
+							(
+								Edit   	   
+								Delete   	   
+								Duplicate   	   
+								View Record   	   
+    						)
+     			)
+			)
+			detailview
+			(
+				layout
+				(
+		 			type = 1
+					datablock1
+					(
+			 			layout type = -2
+						fields
+						(
+							Account_Name as "Account Name"
+							Retainer_Balance as "Retainer Balance"
+							Retainer_Used as "Retainer Used"
+							Retainer_Paid as "Retainer Paid"
+							Proposal_Hours_Variance as "Proposal Hours Variance"
+							Primary_Consultant as "Primary Consultant"
+							Unpaid_Total as "Unpaid Total"
+							Total_Hours_Billed as "Total Hours Billed"
+							Total_Proposal_Hours as "Total Proposal Hours"
+							Proposal_Hours_Billed as "Proposal Hours Billed"
+							Hours_Balance as "Hours Balance"
+						)
+					)
+				)
+
+				menu
+    			(
+    	 			header
+    	 			(
+    		 			Edit 
+    		 			Duplicate 
+    		 			Delete 
+    	 			)
+    			)
+			)
+		}
+	}
+	section Client_Proposals
+	{
+		displayname= "Client Proposals"
+		icon = "users-2-contacts-44"
+		form Client_Proposal
+		{
+			displayname = "Client Proposal"
+			success message = "Client Proposal Added Successfully"
+			field alignment = left
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			Proposal_Name
+			(
+    			type = text
+				displayname = "Proposal Name"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Account
+			(
+				type = picklist	
+				values  = Account.ID
+    			displayformat = [Account_Name]
+				searchable = true
+				sortorder = ascending
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Proposal_Number
+			(
+    			type = autonumber
+				displayname = "Proposal Number"
+				start index = 0
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Proposal_Hours
+			(
+				type = decimal
+				displayname = "Proposal Hours"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Current_Hours
+			(
+				type = decimal
+				displayname = "Current Hours"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Hours_Balance
+			(
+				type = decimal
+				displayname = "Hours Balance"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Proposal_Total
+			(
+				displayname = "Proposal Total"
+				type = USD
+				format = commadotwestern
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Hours_Variance
+			(
+    			type = percentage
+				displayname = "Hours Variance"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Proposal_Services
+			(
+				type = grid
+				displayname = "Proposal Services"
+				values  = Service_Line_Items.ID
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Section1
+			(
+				type = section
+				displayname = "Section"
+	 			row = 3
+	 			column = 0   
+				width = medium
+			)
+			Trigger_Flag
+			(
+    			type = checkbox
+				displayname = "Trigger Flag"
+				initial value = false
+	 			row = 3
+	 			column = 1   
+				width = medium
+			)
+			Trigger
+			(
+    			type = datetime
+				timedisplayoptions = "hh:mm:ss"
+				alloweddays = 0,1,2,3,4,5,6
+	 			row = 3
+	 			column = 1   
+				width = medium
+			)
+	
+			customize
+			(
+				icon = "users-2-contacts-44"
+			)
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		default list All_Client_Proposals
+		{
+			displayName = "All Client Proposals"
+			show all rows from Client_Proposal    
+			(
+				Account
+				Proposal_Name as "Proposal Name"
+				Proposal_Number as "Proposal Number"
+				Proposal_Hours as "Proposal Hours"
+				Proposal_Total as "Proposal Total"
+				Hours_Variance as "Hours Variance"
+				Trigger
+				Trigger_Flag as "Trigger Flag"
+				Current_Hours as "Current Hours"
+				Hours_Balance as "Hours Balance"
+			)
+			options
+			(
+				icon = "travel-world"
+	 		)
+			quickview
+			(
+				layout
+				(
+		 			type = -1
+					datablock1
+					(
+			 			layout type = -1
+						fields
+						(
+							Account
+							Proposal_Name as "Proposal Name"
+							Proposal_Number as "Proposal Number"
+							Proposal_Total as "Proposal Total"
+							Proposal_Hours as "Proposal Hours"
+							Current_Hours as "Current Hours"
+							Hours_Balance as "Hours Balance"
+							Hours_Variance as "Hours Variance"
+							Trigger
+						)
+					)
+				)
+
+				menu
+    			(
+    	 			header
+    	 			(
+    		 			Edit 
+    		 			Duplicate 
+    		 			Delete 
+    	 			)
+							record
+							(
+								Edit   	   
+								Duplicate   	   
+								Delete   	   
+    						)
+    			)
+    			action
+    			(
+							on click
+							(
+								View Record   	   
+    						)
+							on right click
+							(
+								Edit   	   
+								Delete   	   
+								Duplicate   	   
+								View Record   	   
+    						)
+     			)
+			)
+			detailview
+			(
+				layout
+				(
+		 			type = 1
+					datablock1
+					(
+			 			layout type = -2
+						fields
+						(
+							Account
+							Proposal_Name as "Proposal Name"
+							Proposal_Number as "Proposal Number"
+							Proposal_Hours as "Proposal Hours"
+							Proposal_Total as "Proposal Total"
+							Hours_Variance as "Hours Variance"
+							Trigger
+							Trigger_Flag as "Trigger Flag"
+							Current_Hours as "Current Hours"
+							Hours_Balance as "Hours Balance"
+						)
+					)
+				)
+
+				menu
+    			(
+    	 			header
+    	 			(
+    		 			Edit 
+    		 			Duplicate 
+    		 			Delete 
+    	 			)
+    			)
+			)
+		}
+	}
+	section Staffs
+	{
+		icon = "holidays-sickle"
+		form Staff
+		{
+			success message = "Staff Added Successfully"
+			field alignment = left
+					hide = true
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			Staff_Name
+			(
+    			type = name
+				displayname = "Staff Name"
+     			prefix
+     			(
+	     			 type = prefix
+	     			 displayname ="Prefix"
+	     			 visibility = false
+	     			 value = {"Mr.","Mrs.","Ms."}
+     			) 
+     			first_name
+     			(
+	     			 type = first_name
+	     			 displayname ="First Name"
+     			) 
+     			last_name
+     			(
+	     			 type = last_name
+	     			 displayname ="Last Name"
+     			) 
+     			suffix
+     			(
+	     			 type = suffix
+	     			 displayname ="Suffix"
+	     			 visibility = false
+     			) 
+	 			row = 1
+	 			column = 1   
+				width = medium
+				personal data = true
+			)
+			Role
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Developer","Consultant","Management"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			customize
+			(
+				icon = "holidays-sickle"
+			)
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		default list All_Staffs
+		{
+			displayName = "All Staffs"
+   			hide = true
+			show all rows from Staff    
+			(
+				Staff_Name  as "Staff Name"
+	 			(
+	      			displayformat = [first_name+""+prefix+""+last_name+""+suffix]
+	 			)
+				Role
+			)
+			options
+			(
+				icon = "travel-world"
+	 		)
+			quickview
+			(
+				layout
+				(
+		 			type = -1
+					datablock1
+					(
+			 			layout type = -1
+						fields
+						(
+							Staff_Name as "Staff Name"
+							Role
+						)
+					)
+				)
+
+				menu
+    			(
+    	 			header
+    	 			(
+    		 			Edit 
+    		 			Duplicate 
+    		 			Delete 
+    	 			)
+							record
+							(
+								Edit   	   
+								Duplicate   	   
+								Delete   	   
+    						)
+    			)
+    			action
+    			(
+							on click
+							(
+								View Record   	   
+    						)
+							on right click
+							(
+								Edit   	   
+								Delete   	   
+								Duplicate   	   
+								View Record   	   
+    						)
+     			)
+			)
+			detailview
+			(
+				layout
+				(
+		 			type = 1
+					datablock1
+					(
+			 			layout type = -2
+						fields
+						(
+							Staff_Name as "Staff Name"
+							Role
+						)
+					)
+				)
+
+				menu
+    			(
+    	 			header
+    	 			(
+    		 			Edit 
+    		 			Duplicate 
+    		 			Delete 
+    	 			)
+    			)
+			)
+		}
+	}
+	section Billables
+	{
+		icon = "tech-desktop"
+		form Billables
+		{
+			success message = "Data Added Successfully!"
+			field alignment = left
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			Hours
+			(
+				type = decimal
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Client_Proposal
+			(
+				type = picklist	
+				displayname = "Client Proposal"
+				values  = Client_Proposal.ID
+    			displayformat = [Proposal_Name]
+				sortorder = ascending
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Service_Item
+			(
+				type = picklist	
+				displayname = "Service Item"
+				values  = Service_Line_Items[Client_Proposal.ID == input.Proposal_ID].ID
+    			displayformat = [Service_Name]
+				advanced field search = true
+				sortorder = ascending
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Staff
+			(
+				type = picklist	
+				values  = Staff.ID
+    			displayformat = [" " + Staff_Name.prefix + " " + Staff_Name.first_name + " " + Staff_Name.last_name + " " + Staff_Name.suffix]
+				searchable = true
+				sortorder = ascending
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Account
+			(
+				type = picklist	
+				values  = Account.ID
+    			displayformat = [Account_Name]
+				searchable = true
+				sortorder = ascending
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Proposal_ID
+			(
+				type = number
+				displayname = "Proposal ID"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Bill_Date
+			(
+    			type = date
+				displayname = "Bill Date"
+				alloweddays = 0,1,2,3,4,5,6
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			customize
+			(
+				icon = "ui-1-bold-add"
+			)
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		default list Billables_Report
+		{
+			displayName = "Billables Report"
+			show all rows from Billables    
+			(
+				Hours
+				Client_Proposal as "Client Proposal"
+				Staff
+				Service_Item as "Service Item"
+				Account
+				Proposal_ID as "Proposal ID"
+				Bill_Date as "Bill Date"
+			)
+			options
+			(
+				icon = "business-laptop-71"
+	 		)
+			quickview
+			(
+				layout
+				(
+		 			type = -1
+					datablock1
+					(
+			 			layout type = -1
+						fields
+						(
+							Bill_Date as "Bill Date"
+							Hours
+							Client_Proposal as "Client Proposal"
+							Staff
+							Service_Item as "Service Item"
+							Account
+							Proposal_ID as "Proposal ID"
+						)
+					)
+				)
+
+				menu
+    			(
+    	 			header
+    	 			(
+    		 			Edit 
+    		 			Duplicate 
+    		 			Delete 
+    	 			)
+							record
+							(
+								Edit   	   
+								Duplicate   	   
+								Delete   	   
+    						)
+    			)
+    			action
+    			(
+							on click
+							(
+								View Record   	   
+    						)
+							on right click
+							(
+								Edit   	   
+								Delete   	   
+								Duplicate   	   
+								View Record   	   
+    						)
+     			)
+			)
+			detailview
+			(
+				layout
+				(
+		 			type = 1
+					datablock1
+					(
+			 			layout type = -2
+						fields
+						(
+							Hours
+							Client_Proposal as "Client Proposal"
+							Staff
+							Service_Item as "Service Item"
+							Account
+							Proposal_ID as "Proposal ID"
+							Bill_Date as "Bill Date"
+						)
+					)
+				)
+
+				menu
+    			(
+    	 			header
+    	 			(
+    		 			Edit 
+    		 			Duplicate 
+    		 			Delete 
+    	 			)
+    			)
+			)
+		}
+	}
+	section Invoices
+	{
+		icon = "shopping-receipt"
+		form Invoices
+		{
+			success message = "Invoice Added Successfully"
+			field alignment = left
+					hide = true
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			Invoice_Number
+			(
+    			type = autonumber
+				displayname = "Invoice Number"
+				start index = 1
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Status
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Outstanding","Paid"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Invoice_Amount
+			(
+				displayname = "Invoice Amount"
+				type = USD
+				format = commadotwestern
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Account
+			(
+				type = picklist	
+				values  = Account.ID
+    			displayformat = [Account_Name]
+				searchable = true
+				sortorder = ascending
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			customize
+			(
+				icon = "shopping-receipt"
+			)
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		default list All_Invoices
+		{
+			displayName = "All Invoices"
+   			hide = true
+			show all rows from Invoices    
+			(
+				Status
+				Invoice_Amount as "Invoice Amount"
+				Account
+				Invoice_Number as "Invoice Number"
+			)
+			options
+			(
+				icon = "travel-world"
+	 		)
+			quickview
+			(
+				layout
+				(
+		 			type = -1
+					datablock1
+					(
+			 			layout type = -1
+						fields
+						(
+							Status
+							Invoice_Amount as "Invoice Amount"
+							Account
+							Invoice_Number as "Invoice Number"
+						)
+					)
+				)
+
+				menu
+    			(
+    	 			header
+    	 			(
+    		 			Edit 
+    		 			Duplicate 
+    		 			Delete 
+    	 			)
+							record
+							(
+								Edit   	   
+								Duplicate   	   
+								Delete   	   
+    						)
+    			)
+    			action
+    			(
+							on click
+							(
+								View Record   	   
+    						)
+							on right click
+							(
+								Edit   	   
+								Delete   	   
+								Duplicate   	   
+								View Record   	   
+    						)
+     			)
+			)
+			detailview
+			(
+				layout
+				(
+		 			type = 1
+					datablock1
+					(
+			 			layout type = -2
+						fields
+						(
+							Status
+							Invoice_Amount as "Invoice Amount"
+							Account
+							Invoice_Number as "Invoice Number"
+						)
+					)
+				)
+
+				menu
+    			(
+    	 			header
+    	 			(
+    		 			Edit 
+    		 			Duplicate 
+    		 			Delete 
+    	 			)
+    			)
+			)
+		}
+	}
+	section Billable_Events
+	{
+		displayname= "Billable Events"
+		icon = "ui-1-calendar-grid-58"
+		form Billable_Event
+		{
+			displayname = "Billable Event"
+			success message = "Billable Event Added Successfully"
+			field alignment = left
+					hide = true
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			Account
+			(
+				type = picklist	
+				values  = Account.ID
+    			displayformat = [Account_Name]
+				searchable = true
+				sortorder = ascending
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Proposal_Name
+			(
+				type = picklist	
+				displayname = "Proposal Name"
+				values  = Client_Proposal.ID
+    			displayformat = [Proposal_Name]
+				sortorder = ascending
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Total_Hours_Recorded
+			(
+				type = decimal
+				displayname = "Total Hours Recorded"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			SubForm
+			(
+				type = grid
+				values  = Billables.ID
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+	
+			customize
+			(
+				icon = "ui-1-calendar-grid-58"
+			)
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+					reset
+					(
+   						type = reset
+   						displayname = "Reset"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		default list All_Billable_Events
+		{
+			displayName = "All Billable Events"
+   			hide = true
+			show all rows from Billable_Event    
+			(
+				Account
+				Proposal_Name as "Proposal Name"
+				Total_Hours_Recorded as "Total Hours Recorded"
+			)
+			options
+			(
+				icon = "travel-world"
+	 		)
+			quickview
+			(
+				layout
+				(
+		 			type = -1
+					datablock1
+					(
+			 			layout type = -1
+						fields
+						(
+							Account
+							Proposal_Name as "Proposal Name"
+							Total_Hours_Recorded as "Total Hours Recorded"
+						)
+					)
+				)
+
+				menu
+    			(
+    	 			header
+    	 			(
+    		 			Edit 
+    		 			Duplicate 
+    		 			Delete 
+    	 			)
+							record
+							(
+								Edit   	   
+								Duplicate   	   
+								Delete   	   
+    						)
+    			)
+    			action
+    			(
+							on click
+							(
+								View Record   	   
+    						)
+							on right click
+							(
+								Edit   	   
+								Delete   	   
+								Duplicate   	   
+								View Record   	   
+    						)
+     			)
+			)
+			detailview
+			(
+				layout
+				(
+		 			type = 1
+					datablock1
+					(
+			 			layout type = -2
+						fields
+						(
+							Account
+							Proposal_Name as "Proposal Name"
+							Total_Hours_Recorded as "Total Hours Recorded"
+						)
+					)
+				)
+
+				menu
+    			(
+    	 			header
+    	 			(
+    		 			Edit 
+    		 			Duplicate 
+    		 			Delete 
+    	 			)
+    			)
+			)
+		}
+	}
+	section New_Proposal_V3_Subform
+	{
+		displayname= "New Proposal V3 Subform"
+		form New_Proposal_V3_Subform
+		{
+			displayname = "New Proposal V3 Subform"
+			success message = "Proposal Added Successfully"
+			field alignment = left
+					hide = true
+			Section4
+			(
+				type = section
+				displayname = "Section"
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			css
+			(
+    			type = plaintext
+				value = "<div> <br /></div>"
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Proposal_Information
+			(
+				type = section
+				displayname = "Proposal Information"
+				visibility = true
+	 			row = 2
+	 			column = 0   
+				width = medium
+			)
+			Proposal_Name
+			(
+    			type = text
+				displayname = "Proposal Name"
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Contact
+			(
+				type = picklist	
+				datasource = contacts
+				displayformat = [first_name + last_name]
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Deal
+			(
+				type = picklist	
+				datasource = deals
+				displayformat = [potential_name]
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Proposal_FolUp_WF
+			(
+				type = picklist
+				displayname = "Proposal FolUp-WF"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			No_First_FU_WF_Email
+			(
+    			type = checkbox
+				displayname = "No First FU WF Email"
+				initial value = false
+	 			row = 2
+	 			column = 1   
+				width = medium
+			)
+			Account
+			(
+				type = picklist	
+				datasource = accounts
+				displayformat = [account_name]
+	 			row = 2
+	 			column = 2   
+				width = medium
+			)
+			Email
+			(
+    			type = email
+				maxchar = 80
+	 			row = 2
+	 			column = 2   
+				width = medium
+				personal data = true
+			)
+			Edition
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 2
+	 			column = 2   
+				width = medium
+			)
+			Business_Needs1
+			(
+				type = list	
+				displayname = "Business Needs"
+				values = {"Choice 1","Choice 2","Choice 3"}
+				height = 60px
+	 			row = 2
+	 			column = 2   
+				width = medium
+			)
+			Workdrive_Folder_URL
+			(
+    			type = text
+				displayname = "Workdrive Folder URL"
+	 			row = 2
+	 			column = 2   
+				width = medium
+			)
+			Proposal_Summary
+			(
+				type = section
+				displayname = "Proposal Summary"
+				visibility = true
+	 			row = 3
+	 			column = 0   
+				width = medium
+			)
+			Option_A
+			(
+				displayname = "Option A"
+				type = USD
+				format = commadotwestern
+	 			row = 3
+	 			column = 1   
+				width = medium
+			)
+			Option_B
+			(
+				displayname = "Option B"
+				type = USD
+				format = commadotwestern
+	 			row = 3
+	 			column = 1   
+				width = medium
+			)
+			Option_C
+			(
+				displayname = "Option C"
+				type = USD
+				format = commadotwestern
+	 			row = 3
+	 			column = 1   
+				width = medium
+			)
+			Lagniappe
+			(
+				type = USD
+				format = commadotwestern
+	 			row = 3
+	 			column = 1   
+				width = medium
+			)
+			Option_A_EstimHours2
+			(
+				type = decimal
+				displayname = "Option A EstimHours"
+	 			row = 3
+	 			column = 2   
+				width = medium
+			)
+			Option_B_EstimHours
+			(
+				type = decimal
+				displayname = "Option B EstimHours"
+	 			row = 3
+	 			column = 2   
+				width = medium
+			)
+			Option_C_EstimHours
+			(
+				type = decimal
+				displayname = "Option C EstimHours"
+	 			row = 3
+	 			column = 2   
+				width = medium
+			)
+			Multiplier
+			(
+				type = decimal
+	 			row = 3
+	 			column = 2   
+				width = medium
+			)
+			Section
+			(
+				type = section
+	 			row = 4
+	 			column = 0   
+				width = medium
+			)
+			plain
+			(
+    			type = plaintext
+				value = "<div><br /></div>"
+	 			row = 4
+	 			column = 1   
+				width = medium
+			)
+			Proposal_Finalization
+			(
+				type = section
+				displayname = "Proposal Finalization"
+	 			row = 5
+	 			column = 0   
+				width = medium
+			)
+			Selected
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 5
+	 			column = 1   
+				width = medium
+			)
+			Selected_Hours
+			(
+				type = decimal
+				displayname = "Selected Hours"
+	 			row = 5
+	 			column = 2   
+				width = medium
+			)
+			Selected_Amount
+			(
+				displayname = "Selected Amount"
+				type = USD
+				format = commadotwestern
+	 			row = 5
+	 			column = 3   
+				width = medium
+			)
+			Business_Needs
+			(
+				type = section
+				displayname = "Business Needs"
+				visibility = true
+	 			row = 6
+	 			column = 0   
+				width = medium
+			)
+			Bus_Needs_1
+			(
+    			type = text
+				displayname = "Bus Needs 1"
+	 			row = 6
+	 			column = 1   
+				width = medium
+			)
+			Bus_Needs_2
+			(
+    			type = text
+				displayname = "Bus Needs 2"
+	 			row = 6
+	 			column = 1   
+				width = medium
+			)
+			Bus_Needs_3
+			(
+    			type = text
+				displayname = "Bus Needs 3"
+	 			row = 6
+	 			column = 1   
+				width = medium
+			)
+			Other_Thoughts
+			(
+    			type = text
+				displayname = "Other Thoughts"
+	 			row = 6
+	 			column = 2   
+				width = medium
+			)
+			Ideal_Outcome
+			(
+    			type = textarea
+				displayname = "Ideal Outcome"
+				height = 100px
+	 			row = 6
+	 			column = 2   
+				width = medium
+			)
+			Section1
+			(
+				type = section
+				displayname = "Section"
+	 			row = 7
+	 			column = 0   
+				width = medium
+			)
+			plain1
+			(
+    			type = plaintext
+				value = "<div><br /></div>"
+	 			row = 7
+	 			column = 1   
+				width = medium
+			)
+			Hide_Basic_Services
+			(
+    			type = checkbox
+				displayname = "Hide Basic Services"
+				initial value = false
+	 			row = 7
+	 			column = 1   
+				width = medium
+			)
+			Basic_Services
+			(
+				type = section
+				displayname = "Basic Services"
+				visibility = true
+	 			row = 8
+	 			column = 0   
+				width = medium
+			)
+			Initial_Meeting
+			(
+				type = picklist
+				displayname = "Initial Meeting"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 8
+	 			column = 1   
+				width = medium
+			)
+			Analyze_Existing_Data
+			(
+				type = picklist
+				displayname = "Analyze Existing Data"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 8
+	 			column = 1   
+				width = medium
+			)
+			Define_Security
+			(
+				type = picklist
+				displayname = "Define Security"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 8
+	 			column = 1   
+				width = medium
+			)
+			Basic_DB_Design
+			(
+				type = picklist
+				displayname = "Basic DB Design"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 8
+	 			column = 1   
+				width = medium
+			)
+			Import_Basic_Data
+			(
+				type = picklist
+				displayname = "Import Basic Data"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 8
+	 			column = 2   
+				width = medium
+			)
+			Data_Seg_Views
+			(
+				type = picklist
+				displayname = "Data Seg / Views"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 8
+	 			column = 2   
+				width = medium
+			)
+			End_User_Training
+			(
+				type = picklist
+				displayname = "End User Training"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 8
+	 			column = 2   
+				width = medium
+			)
+			Section2
+			(
+				type = section
+				displayname = "Section"
+	 			row = 9
+	 			column = 0   
+				width = medium
+			)
+			plain2
+			(
+    			type = plaintext
+				value = "<div><br /></div>"
+	 			row = 9
+	 			column = 1   
+				width = medium
+			)
+			Hide_Intermediate_Services
+			(
+    			type = checkbox
+				displayname = "Hide Intermediate Services"
+				initial value = false
+	 			row = 9
+	 			column = 1   
+				width = medium
+			)
+			Intermediate_Services
+			(
+				type = section
+				displayname = "Intermediate Services"
+				visibility = true
+	 			row = 10
+	 			column = 0   
+				width = medium
+			)
+			Elaborate_Data_Migration
+			(
+				type = picklist
+				displayname = "Elaborate Data Migration"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Clean_Up_Views
+			(
+				type = picklist
+				displayname = "Clean Up Views"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Adv_Design_Custom_Mod
+			(
+				type = picklist
+				displayname = "Adv Design-Custom Mod"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Num_Custom_Modules
+			(
+				type = picklist
+				displayname = "Num Custom Modules"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Custom_Module_Notes
+			(
+    			type = text
+				displayname = "Custom Module Notes"
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Add_Layout_Rules
+			(
+				type = picklist
+				displayname = "Add Layout Rules"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Layout_Rule_Notes
+			(
+    			type = text
+				displayname = "Layout Rule Notes"
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Workflow_Rules
+			(
+				type = picklist
+				displayname = "Workflow Rules"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Num_WF_Rules
+			(
+				type = picklist
+				displayname = "Num WF Rules"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Workflow_Rule_Notes
+			(
+    			type = text
+				displayname = "Workflow Rule Notes"
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Create_Email_Templates
+			(
+				type = picklist
+				displayname = "Create Email Templates"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Num_Email_Templates
+			(
+				type = picklist
+				displayname = "Num Email Templates"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Email_Template_Notes
+			(
+    			type = text
+				displayname = "Email Template Notes"
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Remote_Work_Bundle_Cliq_Connect_Workdrive_Meeting
+			(
+				type = picklist
+				displayname = "Remote Work Bundle Cliq/Connect/Workdrive/Meeting"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Bookings
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 1   
+				width = medium
+			)
+			Check_In_Meetings
+			(
+				type = picklist
+				displayname = "Check In Meetings"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Num_Meetings
+			(
+				type = picklist
+				displayname = "Num Meetings"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Basic_Reports
+			(
+				type = picklist
+				displayname = "Basic Reports"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Add_l_Report_Notes
+			(
+    			type = text
+				displayname = "Add'l Report Notes"
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			KPI_Dashboard
+			(
+				type = picklist
+				displayname = "KPI Dashboard"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Company_Home_Page
+			(
+				type = picklist
+				displayname = "Company Home Page"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Email_Setup
+			(
+				type = picklist
+				displayname = "Email Setup"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Email_Software
+			(
+				type = picklist
+				displayname = "Email Software"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Zoho_Mail_Setup
+			(
+				type = picklist
+				displayname = "Zoho Mail Setup"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Webform_Simple_Forms
+			(
+				type = picklist
+				displayname = "Webform/Simple Forms"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Num_Webforms
+			(
+				type = number
+				displayname = "Num Webforms"
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Support
+			(
+				type = list	
+				values = {"Choice 1","Choice 2","Choice 3"}
+				height = 60px
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Spec_Request_Title
+			(
+    			type = text
+				displayname = "Spec Request Title"
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Spec_Request_Details
+			(
+    			type = textarea
+				displayname = "Spec Request Details"
+				height = 100px
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Spec_Req_Pricing
+			(
+				displayname = "Spec Req Pricing"
+				type = USD
+				format = commadotwestern
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Spec_Request_Hrs
+			(
+				type = number
+				displayname = "Spec Request Hrs"
+	 			row = 10
+	 			column = 2   
+				width = medium
+			)
+			Section3
+			(
+				type = section
+				displayname = "Section"
+	 			row = 11
+	 			column = 0   
+				width = medium
+			)
+			plain3
+			(
+    			type = plaintext
+				value = "<div><br /></div>"
+	 			row = 11
+	 			column = 1   
+				width = medium
+			)
+			Hide_Advanced_Services
+			(
+    			type = checkbox
+				displayname = "Hide Advanced Services"
+				initial value = false
+	 			row = 11
+	 			column = 1   
+				width = medium
+			)
+			Advanced_Services
+			(
+				type = section
+				displayname = "Advanced Services"
+				visibility = true
+	 			row = 12
+	 			column = 0   
+				width = medium
+			)
+			Role_Security
+			(
+				type = picklist
+				displayname = "Role Security"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Adv_Custom_Functions
+			(
+				type = picklist
+				displayname = "Adv Custom Functions"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Num_CF
+			(
+				type = number
+				displayname = "Num CF"
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			CF_Notes
+			(
+    			type = text
+				displayname = "CF Notes"
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Campaigns_MH_Integration
+			(
+				type = picklist
+				displayname = "Campaigns/MH Integration"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Campaigns_MH_Training
+			(
+				type = picklist
+				displayname = "Campaigns/MH Training"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Social
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Sign_Integ_Training
+			(
+				type = picklist
+				displayname = "Sign Integ / Training"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			SalesIQ_Integ_Training
+			(
+				type = picklist
+				displayname = "SalesIQ Integ / Training"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Zobots
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Zobot_Notes
+			(
+    			type = text
+				displayname = "Zobot Notes"
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Zobot_Pricing
+			(
+				type = number
+				displayname = "Zobot Pricing"
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Desk_Integ_Training
+			(
+				type = picklist
+				displayname = "Desk Integ / Training"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Books_Integ_Training
+			(
+				type = picklist
+				displayname = "Books Integ / Training"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Inventory
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			People
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Performance_Evaluations
+			(
+				type = picklist
+				displayname = "Performance Evaluations"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Recruit
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 1   
+				width = medium
+			)
+			Complicated_Forms
+			(
+				type = picklist
+				displayname = "Complicated Forms"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Num_Forms
+			(
+				type = number
+				displayname = "Num Forms"
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Survey
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Projects
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Adv_Analytics
+			(
+				type = picklist
+				displayname = "Adv Analytics"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Adv_Analytics_Notes
+			(
+    			type = text
+				displayname = "Adv Analytics Notes"
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Num_AA_Reports
+			(
+				type = number
+				displayname = "Num AA Reports"
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Pilot_Testing
+			(
+				type = picklist
+				displayname = "Pilot Testing"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Documentation
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Spec_Req_C
+			(
+    			type = text
+				displayname = "Spec Req C"
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Spec_Req_C_Details
+			(
+    			type = textarea
+				displayname = "Spec Req C Details"
+				height = 100px
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Spec_Req_C_Pricing
+			(
+				displayname = "Spec Req C Pricing"
+				type = USD
+				format = commadotwestern
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Spec_Req_C_Hours
+			(
+				type = number
+				displayname = "Spec Req C Hours"
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Follow_Up_User_Training
+			(
+				type = picklist
+				displayname = "Follow Up User Training"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Admin_Basic_Training
+			(
+				type = picklist
+				displayname = "Admin Basic Training"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Admin_Adv_Training
+			(
+				type = picklist
+				displayname = "Admin Adv Training"
+				maxchar = 100
+				values = {"Choice 1","Choice 2","Choice 3"}
+	 			row = 12
+	 			column = 2   
+				width = medium
+			)
+			Custom_Development_Requests
+			(
+				type = grid
+				displayname = "Custom Development Requests"
+				Development_Request_Name
+				(
+    				type = text
+					displayname = "Development Request Name"
+					width = medium
+				)
+				Development_Request_Type
+				(
+					type = picklist
+					displayname = "Development Request Type"
+					maxchar = 100
+					values = {"Choice 1","Choice 2","Choice 3"}
+					width = medium
+				)
+				A_B_or_C
+				(
+					type = picklist
+					displayname = "A, B, or C"
+					maxchar = 100
+					values = {"Choice 1","Choice 2","Choice 3"}
+					width = medium
+				)
+				Hours
+				(
+					type = number
+					width = medium
+				)
+				Rate
+				(
+					type = number
+					width = medium
+				)
+				Development_Request_Total
+				(
+					displayname = "Development Request Total"
+					type = USD
+					format = commadotwestern
+					width = medium
+				)
+	 			row = 13
+	 			column = 1   
+				width = medium
+			)
+			Services_Test
+			(
+				type = grid
+				displayname = "Services (Test)"
+				Service
+				(
+					type = picklist
+					maxchar = 100
+					values = {"Choice 1","Choice 2","Choice 3"}
+					width = medium
+				)
+				Tier_A_B_C
+				(
+					type = picklist
+					displayname = "Tier (A,B,C)"
+					maxchar = 100
+					values = {"Choice 1","Choice 2","Choice 3"}
+					width = medium
+				)
+				Quantity
+				(
+					type = number
+					width = medium
+				)
+				Rate
+				(
+					type = USD
+					format = commadotwestern
+					width = medium
+				)
+				Total
+				(
+					type = USD
+					format = commadotwestern
+					width = medium
+				)
+				Service_Notes
+				(
+    				type = textarea
+					displayname = "Service Notes"
+					height = 100px
+					width = medium
+				)
+	 			row = 14
+	 			column = 1   
+				width = medium
+			)
+			Service_List_A
+			(
+				type = grid
+				displayname = "Service List A"
+				private = true
+	 			row = 15
+	 			column = 1   
+				width = medium
+			)
+			Service_List_B
+			(
+				type = grid
+				displayname = "Service List B"
+				private = true
+	 			row = 16
+	 			column = 1   
+				width = medium
+			)
+			Service_List_C
+			(
+				type = grid
+				displayname = "Service List C"
+				private = true
+	 			row = 17
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		default list New_Proposal_V3_Subform_Report
+		{
+			displayName = "New Proposal V3 Subform Report"
+			show all rows from New_Proposal_V3_Subform    
+			(
+				Proposal_Name as "Proposal Name"
+				Contact
+				Deal
+				Proposal_FolUp_WF as "Proposal FolUp-WF"
+				No_First_FU_WF_Email as "No First FU WF Email"
+				Account
+				Email
+				Edition
+				Business_Needs1 as "Business Needs"
+				Workdrive_Folder_URL as "Workdrive Folder URL"
+				Option_A as "Option A"
+				Option_B as "Option B"
+				Option_C as "Option C"
+				Lagniappe
+				Option_A_EstimHours2 as "Option A EstimHours"
+				Option_B_EstimHours as "Option B EstimHours"
+				Option_C_EstimHours as "Option C EstimHours"
+				Multiplier
+				Selected
+				Selected_Hours as "Selected Hours"
+				Selected_Amount as "Selected Amount"
+				Bus_Needs_1 as "Bus Needs 1"
+				Bus_Needs_2 as "Bus Needs 2"
+				Bus_Needs_3 as "Bus Needs 3"
+				Other_Thoughts as "Other Thoughts"
+				Ideal_Outcome as "Ideal Outcome"
+				Hide_Basic_Services as "Hide Basic Services"
+				Initial_Meeting as "Initial Meeting"
+				Analyze_Existing_Data as "Analyze Existing Data"
+				Define_Security as "Define Security"
+				Basic_DB_Design as "Basic DB Design"
+				Import_Basic_Data as "Import Basic Data"
+				Data_Seg_Views as "Data Seg / Views"
+				End_User_Training as "End User Training"
+				Hide_Intermediate_Services as "Hide Intermediate Services"
+				Elaborate_Data_Migration as "Elaborate Data Migration"
+				Clean_Up_Views as "Clean Up Views"
+				Adv_Design_Custom_Mod as "Adv Design-Custom Mod"
+				Num_Custom_Modules as "Num Custom Modules"
+				Custom_Module_Notes as "Custom Module Notes"
+				Add_Layout_Rules as "Add Layout Rules"
+				Layout_Rule_Notes as "Layout Rule Notes"
+				Workflow_Rules as "Workflow Rules"
+				Num_WF_Rules as "Num WF Rules"
+				Workflow_Rule_Notes as "Workflow Rule Notes"
+				Create_Email_Templates as "Create Email Templates"
+				Num_Email_Templates as "Num Email Templates"
+				Email_Template_Notes as "Email Template Notes"
+				Remote_Work_Bundle_Cliq_Connect_Workdrive_Meeting as "Remote Work Bundle Cliq/Connect/Workdrive/Meeting"
+				Bookings
+				Check_In_Meetings as "Check In Meetings"
+				Num_Meetings as "Num Meetings"
+				Basic_Reports as "Basic Reports"
+				Add_l_Report_Notes as "Add'l Report Notes"
+				KPI_Dashboard as "KPI Dashboard"
+				Company_Home_Page as "Company Home Page"
+				Email_Setup as "Email Setup"
+				Email_Software as "Email Software"
+				Zoho_Mail_Setup as "Zoho Mail Setup"
+				Webform_Simple_Forms as "Webform/Simple Forms"
+				Num_Webforms as "Num Webforms"
+				Support
+				Spec_Request_Title as "Spec Request Title"
+				Spec_Request_Details as "Spec Request Details"
+				Spec_Req_Pricing as "Spec Req Pricing"
+				Spec_Request_Hrs as "Spec Request Hrs"
+				Hide_Advanced_Services as "Hide Advanced Services"
+				Role_Security as "Role Security"
+				Adv_Custom_Functions as "Adv Custom Functions"
+				Num_CF as "Num CF"
+				CF_Notes as "CF Notes"
+				Campaigns_MH_Integration as "Campaigns/MH Integration"
+				Campaigns_MH_Training as "Campaigns/MH Training"
+				Social
+				Sign_Integ_Training as "Sign Integ / Training"
+				SalesIQ_Integ_Training as "SalesIQ Integ / Training"
+				Zobots
+				Zobot_Notes as "Zobot Notes"
+				Zobot_Pricing as "Zobot Pricing"
+				Desk_Integ_Training as "Desk Integ / Training"
+				Books_Integ_Training as "Books Integ / Training"
+				Inventory
+				People
+				Performance_Evaluations as "Performance Evaluations"
+				Recruit
+				Complicated_Forms as "Complicated Forms"
+				Num_Forms as "Num Forms"
+				Survey
+				Projects
+				Adv_Analytics as "Adv Analytics"
+				Adv_Analytics_Notes as "Adv Analytics Notes"
+				Num_AA_Reports as "Num AA Reports"
+				Pilot_Testing as "Pilot Testing"
+				Documentation
+				Spec_Req_C as "Spec Req C"
+				Spec_Req_C_Details as "Spec Req C Details"
+				Spec_Req_C_Pricing as "Spec Req C Pricing"
+				Spec_Req_C_Hours as "Spec Req C Hours"
+				Follow_Up_User_Training as "Follow Up User Training"
+				Admin_Basic_Training as "Admin Basic Training"
+				Admin_Adv_Training as "Admin Adv Training"
+			)
+			quickview
+			(
+				layout
+				(
+		 			type = -1
+					datablock1
+					(
+			 			layout type = -1
+						fields
+						(
+							Proposal_Name as "Proposal Name"
+							Contact
+							Deal
+							Proposal_FolUp_WF as "Proposal FolUp-WF"
+							No_First_FU_WF_Email as "No First FU WF Email"
+							Account
+							Email
+							Edition
+							Business_Needs1 as "Business Needs"
+							Workdrive_Folder_URL as "Workdrive Folder URL"
+							Option_A as "Option A"
+							Option_B as "Option B"
+							Option_C as "Option C"
+							Lagniappe
+							Option_A_EstimHours2 as "Option A EstimHours"
+							Option_B_EstimHours as "Option B EstimHours"
+							Option_C_EstimHours as "Option C EstimHours"
+							Multiplier
+							Selected
+							Selected_Hours as "Selected Hours"
+							Selected_Amount as "Selected Amount"
+							Bus_Needs_1 as "Bus Needs 1"
+							Bus_Needs_2 as "Bus Needs 2"
+							Bus_Needs_3 as "Bus Needs 3"
+							Other_Thoughts as "Other Thoughts"
+							Ideal_Outcome as "Ideal Outcome"
+							Hide_Basic_Services as "Hide Basic Services"
+							Initial_Meeting as "Initial Meeting"
+							Analyze_Existing_Data as "Analyze Existing Data"
+							Define_Security as "Define Security"
+							Basic_DB_Design as "Basic DB Design"
+							Import_Basic_Data as "Import Basic Data"
+							Data_Seg_Views as "Data Seg / Views"
+							End_User_Training as "End User Training"
+							Hide_Intermediate_Services as "Hide Intermediate Services"
+							Elaborate_Data_Migration as "Elaborate Data Migration"
+							Clean_Up_Views as "Clean Up Views"
+							Adv_Design_Custom_Mod as "Adv Design-Custom Mod"
+							Num_Custom_Modules as "Num Custom Modules"
+							Custom_Module_Notes as "Custom Module Notes"
+							Add_Layout_Rules as "Add Layout Rules"
+							Layout_Rule_Notes as "Layout Rule Notes"
+							Workflow_Rules as "Workflow Rules"
+							Num_WF_Rules as "Num WF Rules"
+							Workflow_Rule_Notes as "Workflow Rule Notes"
+							Create_Email_Templates as "Create Email Templates"
+							Num_Email_Templates as "Num Email Templates"
+							Email_Template_Notes as "Email Template Notes"
+							Remote_Work_Bundle_Cliq_Connect_Workdrive_Meeting as "Remote Work Bundle Cliq/Connect/Workdrive/Meeting"
+							Bookings
+							Check_In_Meetings as "Check In Meetings"
+							Num_Meetings as "Num Meetings"
+							Basic_Reports as "Basic Reports"
+							Add_l_Report_Notes as "Add'l Report Notes"
+							KPI_Dashboard as "KPI Dashboard"
+							Company_Home_Page as "Company Home Page"
+							Email_Setup as "Email Setup"
+							Email_Software as "Email Software"
+							Zoho_Mail_Setup as "Zoho Mail Setup"
+							Webform_Simple_Forms as "Webform/Simple Forms"
+							Num_Webforms as "Num Webforms"
+							Support
+							Spec_Request_Title as "Spec Request Title"
+							Spec_Request_Details as "Spec Request Details"
+							Spec_Req_Pricing as "Spec Req Pricing"
+							Spec_Request_Hrs as "Spec Request Hrs"
+							Hide_Advanced_Services as "Hide Advanced Services"
+							Role_Security as "Role Security"
+							Adv_Custom_Functions as "Adv Custom Functions"
+							Num_CF as "Num CF"
+							CF_Notes as "CF Notes"
+							Campaigns_MH_Integration as "Campaigns/MH Integration"
+							Campaigns_MH_Training as "Campaigns/MH Training"
+							Social
+							Sign_Integ_Training as "Sign Integ / Training"
+							SalesIQ_Integ_Training as "SalesIQ Integ / Training"
+							Zobots
+							Zobot_Notes as "Zobot Notes"
+							Zobot_Pricing as "Zobot Pricing"
+							Desk_Integ_Training as "Desk Integ / Training"
+							Books_Integ_Training as "Books Integ / Training"
+							Inventory
+							People
+							Performance_Evaluations as "Performance Evaluations"
+							Recruit
+							Complicated_Forms as "Complicated Forms"
+							Num_Forms as "Num Forms"
+							Survey
+							Projects
+							Adv_Analytics as "Adv Analytics"
+							Adv_Analytics_Notes as "Adv Analytics Notes"
+							Num_AA_Reports as "Num AA Reports"
+							Pilot_Testing as "Pilot Testing"
+							Documentation
+							Spec_Req_C as "Spec Req C"
+							Spec_Req_C_Details as "Spec Req C Details"
+							Spec_Req_C_Pricing as "Spec Req C Pricing"
+							Spec_Req_C_Hours as "Spec Req C Hours"
+							Follow_Up_User_Training as "Follow Up User Training"
+							Admin_Basic_Training as "Admin Basic Training"
+							Admin_Adv_Training as "Admin Adv Training"
+						)
+					)
+				)
+
+				menu
+    			(
+    	 			header
+    	 			(
+    		 			Edit 
+    		 			Duplicate 
+    		 			Delete 
+    		 			Add 
+    		 			Print 
+    		 			Import 
+    		 			Export 
+    	 			)
+							record
+							(
+								Edit   	   
+								Duplicate   	   
+								Print   	   
+								Delete   	   
+    						)
+    			)
+    			action
+    			(
+							on click
+							(
+								View Record   	   
+    						)
+							on right click
+							(
+								Edit   	   
+								Delete   	   
+								Duplicate   	   
+								Print   	   
+								View Record   	   
+    						)
+     			)
+			)
+			detailview
+			(
+				layout
+				(
+		 			type = 1
+					datablock1
+					(
+			 			layout type = -2
+						fields
+						(
+							Proposal_Name as "Proposal Name"
+							Contact
+							Deal
+							Proposal_FolUp_WF as "Proposal FolUp-WF"
+							No_First_FU_WF_Email as "No First FU WF Email"
+							Account
+							Email
+							Edition
+							Business_Needs1 as "Business Needs"
+							Workdrive_Folder_URL as "Workdrive Folder URL"
+							Option_A as "Option A"
+							Option_B as "Option B"
+							Option_C as "Option C"
+							Lagniappe
+							Option_A_EstimHours2 as "Option A EstimHours"
+							Option_B_EstimHours as "Option B EstimHours"
+							Option_C_EstimHours as "Option C EstimHours"
+							Multiplier
+							Selected
+							Selected_Hours as "Selected Hours"
+							Selected_Amount as "Selected Amount"
+							Bus_Needs_1 as "Bus Needs 1"
+							Bus_Needs_2 as "Bus Needs 2"
+							Bus_Needs_3 as "Bus Needs 3"
+							Other_Thoughts as "Other Thoughts"
+							Ideal_Outcome as "Ideal Outcome"
+							Hide_Basic_Services as "Hide Basic Services"
+							Initial_Meeting as "Initial Meeting"
+							Analyze_Existing_Data as "Analyze Existing Data"
+							Define_Security as "Define Security"
+							Basic_DB_Design as "Basic DB Design"
+							Import_Basic_Data as "Import Basic Data"
+							Data_Seg_Views as "Data Seg / Views"
+							End_User_Training as "End User Training"
+							Hide_Intermediate_Services as "Hide Intermediate Services"
+							Elaborate_Data_Migration as "Elaborate Data Migration"
+							Clean_Up_Views as "Clean Up Views"
+							Adv_Design_Custom_Mod as "Adv Design-Custom Mod"
+							Num_Custom_Modules as "Num Custom Modules"
+							Custom_Module_Notes as "Custom Module Notes"
+							Add_Layout_Rules as "Add Layout Rules"
+							Layout_Rule_Notes as "Layout Rule Notes"
+							Workflow_Rules as "Workflow Rules"
+							Num_WF_Rules as "Num WF Rules"
+							Workflow_Rule_Notes as "Workflow Rule Notes"
+							Create_Email_Templates as "Create Email Templates"
+							Num_Email_Templates as "Num Email Templates"
+							Email_Template_Notes as "Email Template Notes"
+							Remote_Work_Bundle_Cliq_Connect_Workdrive_Meeting as "Remote Work Bundle Cliq/Connect/Workdrive/Meeting"
+							Bookings
+							Check_In_Meetings as "Check In Meetings"
+							Num_Meetings as "Num Meetings"
+							Basic_Reports as "Basic Reports"
+							Add_l_Report_Notes as "Add'l Report Notes"
+							KPI_Dashboard as "KPI Dashboard"
+							Company_Home_Page as "Company Home Page"
+							Email_Setup as "Email Setup"
+							Email_Software as "Email Software"
+							Zoho_Mail_Setup as "Zoho Mail Setup"
+							Webform_Simple_Forms as "Webform/Simple Forms"
+							Num_Webforms as "Num Webforms"
+							Support
+							Spec_Request_Title as "Spec Request Title"
+							Spec_Request_Details as "Spec Request Details"
+							Spec_Req_Pricing as "Spec Req Pricing"
+							Spec_Request_Hrs as "Spec Request Hrs"
+							Hide_Advanced_Services as "Hide Advanced Services"
+							Role_Security as "Role Security"
+							Adv_Custom_Functions as "Adv Custom Functions"
+							Num_CF as "Num CF"
+							CF_Notes as "CF Notes"
+							Campaigns_MH_Integration as "Campaigns/MH Integration"
+							Campaigns_MH_Training as "Campaigns/MH Training"
+							Social
+							Sign_Integ_Training as "Sign Integ / Training"
+							SalesIQ_Integ_Training as "SalesIQ Integ / Training"
+							Zobots
+							Zobot_Notes as "Zobot Notes"
+							Zobot_Pricing as "Zobot Pricing"
+							Desk_Integ_Training as "Desk Integ / Training"
+							Books_Integ_Training as "Books Integ / Training"
+							Inventory
+							People
+							Performance_Evaluations as "Performance Evaluations"
+							Recruit
+							Complicated_Forms as "Complicated Forms"
+							Num_Forms as "Num Forms"
+							Survey
+							Projects
+							Adv_Analytics as "Adv Analytics"
+							Adv_Analytics_Notes as "Adv Analytics Notes"
+							Num_AA_Reports as "Num AA Reports"
+							Pilot_Testing as "Pilot Testing"
+							Documentation
+							Spec_Req_C as "Spec Req C"
+							Spec_Req_C_Details as "Spec Req C Details"
+							Spec_Req_C_Pricing as "Spec Req C Pricing"
+							Spec_Req_C_Hours as "Spec Req C Hours"
+							Follow_Up_User_Training as "Follow Up User Training"
+							Admin_Basic_Training as "Admin Basic Training"
+							Admin_Adv_Training as "Admin Adv Training"
+						)
+					)
+				)
+
+				menu
+    			(
+    	 			header
+    	 			(
+    		 			Edit 
+    		 			Duplicate 
+    		 			Print 
+    		 			Delete 
+    	 			)
+    			)
+			)
+		}
+	}
+		 functions
+		 {
+			 Deluge
+			 {
+				 void fixServiceLines()
+         {
+         	serviceLines = Service_Line_Items[ID != null];
+         	for each  service in serviceLines
+         	{
+         		service.Proposal_ID=service.Client_Proposal;
+         	}
+         }
+				 void accountCalc()
+         {
+         	for each  account in Account[ID != null]
+         	{
+         		purchasedTotal = 0.00;
+         		hoursBought = 0.00;
+         		hoursConsumed = 0.00;
+         		proposalHours = 0.00;
+         		proposalHoursConsumed = 0.00;
+         		rate = 225.00;
+         		outstandingTotal = 0.00;
+         		accountInvoicesPaid = Invoices[Account == account.ID && Status == "Paid"];
+         		accountInvoicesOutstanding = Invoices[Account == account.ID && Status == "Outstanding"];
+         		for each  paidInvoice in accountInvoicesPaid
+         		{
+         			purchasedTotal = purchasedTotal + paidInvoice.Invoice_Amount;
+         			hoursBought = hoursBought + paidInvoice.Invoice_Amount / 225;
+         		}
+         		for each  outstandingInvoice in accountInvoicesOutstanding
+         		{
+         			outstandingTotal = outstandingTotal + outstandingInvoice.Invoice_Amount;
+         		}
+         		account.Unpaid_Total=outstandingTotal;
+         		retainerUsed = 0.00;
+         		serviceLinesTotals = Service_Line_Items[Current_Hours != null && Account == account.ID];
+         		for each  serviceLine in serviceLinesTotals
+         		{
+         			hoursConsumed = hoursConsumed + serviceLine.Current_Hours;
+         		}
+         		serviceLinesTotalsProposed = Service_Line_Items[Current_Hours != null && Account == account.ID && Proposal_ID != null];
+         		for each  serviceLineProposed in serviceLinesTotalsProposed
+         		{
+         			proposalHoursConsumed = proposalHoursConsumed + serviceLine.Current_Hours;
+         			proposalHours = proposalHours + serviceLineProposed.Estimated_Hours;
+         		}
+         		account.Hours_Balance=hoursBought / 225 - hoursConsumed;
+         		account.Retainer_Paid=purchasedTotal;
+         		account.Retainer_Used=hoursConsumed * 225;
+         		account.Retainer_Balance=hoursBought * 225 - hoursConsumed * 225;
+         		account.Total_Hours_Billed=hoursConsumed;
+         		account.Total_Proposal_Hours=proposalHours;
+         		account.Proposal_Hours_Billed=proposalHoursConsumed;
+         		account.Proposal_Hours_Variance=(proposalHours - proposalHoursConsumed) / proposalHours;
+         	}
+         }
+				 void generateBillableRecords()
+         {
+         	looper = {"looper","looper","looper","looper"};
+         	allServiceLines = Service_Line_Items[ID != null];
+         	for each  serviceLine in allServiceLines
+         	{
+         		billedHours = serviceLine.Current_Hours / 4;
+         		for each  loop in looper
+         		{
+         			insertBill = insert into Billables
+         			[
+         				Added_User=zoho.loginuser
+         				Proposal_ID=serviceLine.Proposal_ID
+         				Service_Item=serviceLine.ID
+         				Account=serviceLine.Account
+         				Client_Proposal=serviceLine.Client_Proposal
+         				Hours=billedHours
+         			];
+         		}
+         	}
+         }
+			 }
+		 }
+
+
+
+
+		workflow
+		{
+		form
+		{
+			Hide_Basic as "Hide Basic"
+			{
+				type =  form
+				form = New_Proposal
+				record event = on add or edit
+
+				on user input of Hide_Basic_Services
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											if(input.Hide_Basic_Services == true)
+										{
+											hide Basic_Services;
+										}
+										if(input.Hide_Basic_Services == false)
+										{
+											show Basic_Services;
+										}
+						)
+					}
+				}
+
+			}
+			Hide_Intermediate as "Hide Intermediate"
+			{
+				type =  form
+				form = New_Proposal
+				record event = on add or edit
+
+				on user input of Hide_Intermediate_Services
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											if(input.Hide_Intermediate_Services == true)
+										{
+											hide Intermediate_Services;
+										}
+										if(input.Hide_Intermediate_Services == false)
+										{
+											show Intermediate_Services;
+										}
+						)
+					}
+				}
+
+			}
+			Hide_Advanced as "Hide Advanced"
+			{
+				type =  form
+				form = New_Proposal
+				record event = on add or edit
+
+				on user input of Hide_Advanced_Services
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											if(input.Hide_Advanced_Services == true)
+										{
+											hide Advanced_Services;
+										}
+										if(input.Hide_Advanced_Services == false)
+										{
+											show Advanced_Services;
+										}
+						)
+					}
+				}
+
+			}
+			CORE_On_Load as "CORE - On Load"
+			{
+				type =  form
+				form = Meetings
+				record event = on add or edit
+
+				on load
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											hide Hidden;
+						)
+					}
+				}
+
+			}
+			On_Input_Calculate_Time_B as "On Input - Calculate Time Billed"
+			{
+				type =  form
+				form = Meetings
+				record event = on add or edit
+
+				on user input of Tasks.Time_Billed
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											timeTotal = 0.00;
+										for each  line in input.Tasks
+										{
+											if(line.Time_Billed != null)
+											{
+												timeTotal = timeTotal + line.Time_Billed;
+											}
+										}
+										input.Hrs_to_Bill = timeTotal;
+						)
+					}
+				}
+
+			}
+			On_Delete_Recalculate as "On Delete - Recalculate"
+			{
+				type =  form
+				form = Meetings
+				record event = on add or edit
+
+				on delete row of Tasks
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											timeTotal = 0.00;
+										for each  line in input.Tasks
+										{
+											if(line.Time_Billed != null)
+											{
+												timeTotal = timeTotal + line.Time_Billed;
+											}
+										}
+										input.Hrs_to_Bill = timeTotal;
+						)
+					}
+				}
+
+			}
+			Create_On_Load as "Create On Load"
+			{
+				type =  form
+				form = Meetings
+				record event = on add
+
+				on load
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											if(input.zCRM_Meeting_ID != "" && input.zCRM_Meeting_ID != null)
+										{
+											crmMeeting = zoho.crm.getRecordById("Events",input.zCRM_Meeting_ID.toNumber());
+											input.Meeting_Name = crmMeeting.getJSON("Event_Title");
+											input.From = crmMeeting.getJSON("Start_DateTime");
+											input.To = crmMeeting.getJSON("End_DateTime");
+										}
+						)
+					}
+				}
+
+			}
+			On_Success_Write_Redirect as "On Success - Write & Redirect"
+			{
+				type =  form
+				form = Meetings
+				record event = on add or edit
+
+				on success
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											if(input.zCRM_Meeting_ID != null && input.zCRM_Meeting_ID != "")
+										{
+											openUrl("https://crm.zoho.com/crm/org20904071/tab/Events/" + input.zCRM_Meeting_ID + "","same window");
+										}
+						)
+					}
+				}
+
+			}
+			TEst as "TEst"
+			{
+				type =  form
+				form = New_Proposal
+				record event = on add or edit
+
+				field rules
+				{
+					actions 
+					{
+						hide Service_List_A;
+					}
+				}
+
+			}
+			On_Load_CSS as "On Load - CSS"
+			{
+				type =  form
+				form = New_Proposal
+				record event = on add or edit
+
+				on load
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											hide css;
+										input.css = "<style>label.form-label.zc-label-text{font-weight:1000}<style>";
+						)
+					}
+				}
+
+			}
+			Hide_Basic1 as "Hide Basic"
+			{
+				type =  form
+				form = Proposal_V2
+				record event = on add or edit
+
+				on user input of Hide_Basic_Services
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											if(input.Hide_Basic_Services == true)
+										{
+											hide Basic_Services;
+										}
+										if(input.Hide_Basic_Services == false)
+										{
+											show Basic_Services;
+										}
+						)
+					}
+				}
+
+			}
+			Hide_Intermediate1 as "Hide Intermediate"
+			{
+				type =  form
+				form = Proposal_V2
+				record event = on add or edit
+
+				on user input of Hide_Intermediate_Services
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											if(input.Hide_Intermediate_Services == true)
+										{
+											hide Intermediate_Services;
+										}
+										if(input.Hide_Intermediate_Services == false)
+										{
+											show Intermediate_Services;
+										}
+						)
+					}
+				}
+
+			}
+			Hide_Advanced1 as "Hide Advanced"
+			{
+				type =  form
+				form = Proposal_V2
+				record event = on add or edit
+
+				on user input of Hide_Advanced_Services
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											if(input.Hide_Advanced_Services == true)
+										{
+											hide Advanced_Services;
+										}
+										if(input.Hide_Advanced_Services == false)
+										{
+											show Advanced_Services;
+										}
+						)
+					}
+				}
+
+			}
+			TEst1 as "TEst"
+			{
+				type =  form
+				form = Proposal_V2
+				record event = on add or edit
+
+				field rules
+				{
+					actions 
+					{
+						hide Service_List_A;
+					}
+				}
+
+			}
+			On_Load_CSS1 as "On Load - CSS"
+			{
+				type =  form
+				form = Proposal_V2
+				record event = on add or edit
+
+				on load
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											hide css;
+										input.css = "<style>label.form-label.zc-label-text{font-weight:1000}<style>";
+						)
+					}
+				}
+
+			}
+			CORE_On_Load_Always as "CORE - On Load - Always"
+			{
+				type =  form
+				form = Proposal_V2
+				record event = on add or edit
+
+				on load
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											hide css;
+										input.css = "<style>label.form-label.zc-label-text{font-weight:1000}<style>";
+										hide Section;
+										hide Business_Needs;
+										hide Section1;
+										hide Basic_Services;
+										hide Section2;
+										hide Intermediate_Services;
+										hide Section3;
+										hide Advanced_Services;
+										hide Custom_Development_Requests;
+										hide Services_Test;
+										hide Service_List_A;
+										hide Service_List_B;
+										hide Service_List_C;
+						)
+					}
+				}
+
+			}
+			On_Load_Always as "On Load - Always"
+			{
+				type =  form
+				form = Service_Line_Items
+				record event = on add or edit
+
+				on load
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											//hide Proposal_V2;
+						)
+					}
+				}
+
+			}
+			On_Submit_Redirect as "On Submit - Redirect"
+			{
+				type =  form
+				form = Service_Line_Items
+				record event = on add or edit
+
+				on success
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											openUrl("https://creatorapp.zoho.com/zonehelp/proposal-billing-management/#Page:Proposals_Page_V2","parent window");
+						)
+					}
+				}
+
+			}
+			Trigger_Calc as "Trigger Calc"
+			{
+				type =  form
+				form = Client_Proposal
+				record event = on add or edit
+
+				on user input of Trigger
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											// ServiceLines = input.Services;
+										// for each serviceLine in ServiceLines
+										// {
+										// 	if(serviceLine.Service != null && serviceLine.Service != null)
+										// 	{
+										// 		serviceRec = Services[ID == serviceLine.Service];
+										// 		serviceLine.Service_Name = serviceRec.Service_Name;
+										// 		serviceLine.Rate = serviceRec.Base_Rate;
+										// 	if(serviceLine.Total_Hours != null && serviceLine.Total_Hours != 0)
+										// 	{
+										// 		serviceLine.Total_Cost = serviceLine.Total_Hours * serviceLine.Rate;
+										// 	}
+										// 	}
+										// }
+						)
+					}
+				}
+
+			}
+			CORE_Input_of_Trigger_Fla as "CORE Input of Trigger Flag"
+			{
+				type =  form
+				form = Client_Proposal
+				record event = on add or edit
+
+				on user input of Trigger_Flag
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											input.Trigger = zoho.currenttime;
+						)
+					}
+				}
+
+			}
+			TFLAG as "TFLAG"
+			{
+				type =  form
+				form = Client_Proposal
+				record event = on add or edit
+
+				on user input of Trigger_Flag
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											for each  serviceLine in Proposal_Services
+										{
+											if(serviceLine.Service != null)
+											{
+												//info "not null service";
+												serviceRec = Services[ID == serviceLine.Service];
+												//info "service rec?" + serviceRec.count();
+												//info serviceRec.Service_Name;
+												serviceLine.Service_Name=serviceRec.Service_Name;
+												serviceLine.Rate=serviceRec.Base_Rate;
+												serviceLine.Client_Proposal=input.ID;
+												serviceLine.Account=input.Account;
+												if(serviceLine.Estimated_Hours != null && serviceLine.Estimated_Hours != 0)
+												{
+													serviceLine.Total_Cost=serviceLine.Estimated_Hours * serviceLine.Rate;
+												}
+											}
+										}
+										proposalHours = 0.00;
+										proposalCost = 0.00;
+										currentHours = 0.00;
+										balance = 0.00;
+										for each  line in Proposal_Services
+										{
+											if(line.Estimated_Hours != null && line.Estimated_Hours != null)
+											{
+												proposalHours = proposalHours + line.Estimated_Hours;
+												proposalCost = proposalCost + line.Total_Cost;
+											}
+											if(line.Current_Hours != null && line.Estimated_Hours != null)
+											{
+												line.Hours_Balance=line.Estimated_Hours - line.Current_Hours;
+												line.Service_Line_Variance=line.Hours_Balance / line.Estimated_Hours;
+												currentHours = currentHours + line.Current_Hours;
+											}
+										}
+										input.Proposal_Hours = proposalHours;
+										input.Proposal_Total = proposalCost;
+										input.Current_Hours = currentHours;
+										input.Hours_Balance = proposalHours - currentHours;
+										input.Hours_Variance = (proposalHours - currentHours) / input.Proposal_Hours;
+						)
+					}
+				}
+
+			}
+			CORE_input_proposal as "CORE input proposal"
+			{
+				type =  form
+				form = Billables
+				record event = on add or edit
+
+				on user input of Client_Proposal
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											if(input.Client_Proposal != null)
+										{
+											input.Proposal_ID = input.Client_Proposal;
+										}
+						)
+					}
+				}
+
+			}
+			Hide_Basic2 as "Hide Basic"
+			{
+				type =  form
+				form = New_Proposal_V3_Subform
+				record event = on add or edit
+
+				on user input of Hide_Basic_Services
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											if(input.Hide_Basic_Services == true)
+										{
+											hide Basic_Services;
+										}
+										if(input.Hide_Basic_Services == false)
+										{
+											show Basic_Services;
+										}
+						)
+					}
+				}
+
+			}
+			Hide_Intermediate2 as "Hide Intermediate"
+			{
+				type =  form
+				form = New_Proposal_V3_Subform
+				record event = on add or edit
+
+				on user input of Hide_Intermediate_Services
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											if(input.Hide_Intermediate_Services == true)
+										{
+											hide Intermediate_Services;
+										}
+										if(input.Hide_Intermediate_Services == false)
+										{
+											show Intermediate_Services;
+										}
+						)
+					}
+				}
+
+			}
+			Hide_Advanced2 as "Hide Advanced"
+			{
+				type =  form
+				form = New_Proposal_V3_Subform
+				record event = on add or edit
+
+				on user input of Hide_Advanced_Services
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											if(input.Hide_Advanced_Services == true)
+										{
+											hide Advanced_Services;
+										}
+										if(input.Hide_Advanced_Services == false)
+										{
+											show Advanced_Services;
+										}
+						)
+					}
+				}
+
+			}
+			TEst2 as "TEst"
+			{
+				type =  form
+				form = New_Proposal_V3_Subform
+				record event = on add or edit
+
+				field rules
+				{
+					actions 
+					{
+						hide Service_List_A;
+					}
+				}
+
+			}
+			On_Load_CSS2 as "On Load - CSS"
+			{
+				type =  form
+				form = New_Proposal_V3_Subform
+				record event = on add or edit
+
+				on load
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											hide css;
+										input.css = "<style>label.form-label.zc-label-text{font-weight:1000}<style>";
+										hide Section1;
+										hide Basic_Services;
+										hide Intermediate_Services;
+										hide Section3;
+										hide Section;
+										hide Section2;
+										hide Advanced_Services;
+										hide Custom_Development_Requests;
+						)
+					}
+				}
+
+			}
+		}
+
+
+
+
+
+		functions
+		{
+			addServiceModal as "addServiceModal"
+			{
+				type =  functions
+				form = Service_Line_Items
+				execution type = for each record	
+				on start
+				{
+					actions 
+					{
+					on click
+					(
+						openUrl("#Form:Service_Line_Items?zc_LoadIn=dialog","same window");
+					)
+					}
+				}
+			}
+		}
+	}
+	share_settings
+	{
+			"Read"
+			{
+				name = "Read"
+				type = Users_Permissions
+				permissions = {Chat:true, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "This profile will have read permission for all components\n"
+			}
+			"Write"
+			{
+				name = "Write"
+				type = Users_Permissions
+				permissions = {Chat:true, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "This profile will have write permission for all components\n"
+			}
+			"Administrator"
+			{
+				name = "Administrator"
+				type = Users_Permissions
+				permissions = {Chat:true, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "This profile will have all the permissions.\n"
+			}
+			"Customer"
+			{
+				name = "Customer"
+				type = Customer_Portal
+				permissions = {Chat:true, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "This is the default profile having only add and view permission.\n"
+			}
+			roles
+			{
+				"CEO"
+				{
+					description = "User belonging to this role can access data of all other users."
+				}
+			}
+	}
+
+	customize
+	{
+		
+		layout = "tab"
+		color = "black"
+		base theme = "professional"
+		new theme = 4
+		icons = true
+		icons style = outline
+		font = "lato"
+		color options
+    	{
+        color = "4"
+    	}
+    	logo
+    	{
+        	preference = "none"
+        	placement = "left"
+    	}
+	}
+
+	datasources
+	{
+		accounts
+		{
+			displayname = "Accounts"
+			module = Accounts
+			system connection = zohocrm
+			accountid
+			(
+				type = text
+				displayname = "ACCOUNTID"
+				source field name = "ACCOUNTID"
+				primary = true
+				report only = true
+			)
+			must have account_name
+			(
+				type = text
+				displayname = "Account Name"
+				source field name = "Account_Name"
+				search operators = {"startsWith"}
+			)
+			account_number
+			(
+				type = number
+				displayname = "Account Number"
+				source field name = "Account_Number"
+				search operators = {"equals"}
+			)
+			account_site
+			(
+				type = text
+				displayname = "Account Site"
+				source field name = "Account_Site"
+				search operators = {"startsWith"}
+			)
+			account_type
+			(
+				type = picklist
+				displayname = "Account Type"
+				source field name = "Account_Type"
+				search operators = {"startsWith"}
+				values = {"Analyst","Competitor","Customer","Investor","Other","Partner","Press","Prospect"}
+			)
+			annual_revenue
+			(
+				type = decimal
+				displayname = "Annual Revenue"
+				source field name = "Annual_Revenue"
+				search operators = {"equals"}
+			)
+			billing_city
+			(
+				type = text
+				displayname = "Billing City"
+				source field name = "Billing_City"
+				search operators = {"startsWith"}
+			)
+			billing_code
+			(
+				type = text
+				displayname = "Billing Code"
+				source field name = "Billing_Code"
+				search operators = {"startsWith"}
+			)
+			billing_country
+			(
+				type = text
+				displayname = "Billing Country"
+				source field name = "Billing_Country"
+				search operators = {"startsWith"}
+			)
+			billing_state
+			(
+				type = text
+				displayname = "Billing State"
+				source field name = "Billing_State"
+				search operators = {"startsWith"}
+			)
+			billing_street
+			(
+				type = text
+				displayname = "Billing Street"
+				source field name = "Billing_Street"
+				search operators = {"startsWith"}
+			)
+			description
+			(
+				type = textarea
+				displayname = "Description"
+				source field name = "Description"
+			)
+			employees
+			(
+				type = number
+				displayname = "Employees"
+				source field name = "Employees"
+				search operators = {"equals"}
+			)
+			fax
+			(
+				type = text
+				displayname = "Fax"
+				source field name = "Fax"
+				search operators = {"startsWith"}
+			)
+			industry
+			(
+				type = picklist
+				displayname = "Industry"
+				source field name = "Industry"
+				search operators = {"startsWith"}
+				values = {"Communications","Consulting","Education","Financial Services","Government/Military","Health Care","IT Services","Manufacturing","Pharma","Real Estate","Technology"}
+			)
+			ownership
+			(
+				type = picklist
+				displayname = "Ownership"
+				source field name = "Ownership"
+				search operators = {"startsWith"}
+				values = {"Other","Private","Public","Subsidiary"}
+			)
+			parent_account
+			(
+				type = text
+				displayname = "Parent Account"
+				source field name = "Parent_Account"
+				search operators = {"startsWith"}
+			)
+			phone
+			(
+				type = text
+				displayname = "Phone"
+				source field name = "Phone"
+				search operators = {"startsWith"}
+			)
+			rating
+			(
+				type = picklist
+				displayname = "Rating"
+				source field name = "Rating"
+				search operators = {"startsWith"}
+				values = {"Acquired","Active","Market Failed","Project Cancelled","Shut Down"}
+			)
+			shipping_city
+			(
+				type = text
+				displayname = "Shipping City"
+				source field name = "Shipping_City"
+				search operators = {"startsWith"}
+			)
+			shipping_code
+			(
+				type = text
+				displayname = "Shipping Code"
+				source field name = "Shipping_Code"
+				search operators = {"startsWith"}
+			)
+			shipping_country
+			(
+				type = text
+				displayname = "Shipping Country"
+				source field name = "Shipping_Country"
+				search operators = {"startsWith"}
+			)
+			shipping_state
+			(
+				type = text
+				displayname = "Shipping State"
+				source field name = "Shipping_State"
+				search operators = {"startsWith"}
+			)
+			shipping_street
+			(
+				type = text
+				displayname = "Shipping Street"
+				source field name = "Shipping_Street"
+				search operators = {"startsWith"}
+			)
+			sic_code
+			(
+				type = number
+				displayname = "SIC Code"
+				source field name = "SIC_Code"
+				search operators = {"startsWith"}
+			)
+			ticker_symbol
+			(
+				type = text
+				displayname = "Ticker Symbol"
+				source field name = "Ticker_Symbol"
+				search operators = {"startsWith"}
+			)
+			website
+			(
+				type = url
+				displayname = "Website"
+				source field name = "Website"
+			)
+		}
+		contacts
+		{
+			displayname = "Contacts"
+			module = Contacts
+			system connection = zohocrm
+			account_name
+			(
+				type = text
+				displayname = "Account Name"
+				source field name = "Account_Name"
+				search operators = {"startsWith"}
+			)
+			contactid
+			(
+				type = text
+				displayname = "CONTACTID"
+				source field name = "CONTACTID"
+				primary = true
+				report only = true
+			)
+			date_of_birth
+			(
+				type = date
+				displayname = "Date of Birth"
+				source field name = "Date_of_Birth"
+				search operators = {"equals"}
+			)
+			department
+			(
+				type = text
+				displayname = "Department"
+				source field name = "Department"
+				search operators = {"startsWith"}
+			)
+			description
+			(
+				type = textarea
+				displayname = "Description"
+				source field name = "Description"
+			)
+			email
+			(
+				type = email
+				displayname = "Email"
+				source field name = "Email"
+				search operators = {"startsWith"}
+			)
+			email_opt_out
+			(
+				type = checkbox
+				displayname = "Email Opt Out"
+				source field name = "Email_Opt_Out"
+			)
+			fax
+			(
+				type = text
+				displayname = "Fax"
+				source field name = "Fax"
+				search operators = {"startsWith"}
+			)
+			first_name
+			(
+				type = text
+				displayname = "First Name"
+				source field name = "First_Name"
+				search operators = {"startsWith"}
+			)
+			home_phone
+			(
+				type = text
+				displayname = "Home Phone"
+				source field name = "Home_Phone"
+				search operators = {"startsWith"}
+			)
+			must have last_name
+			(
+				type = text
+				displayname = "Last Name"
+				source field name = "Last_Name"
+				search operators = {"startsWith"}
+			)
+			lead_source
+			(
+				type = picklist
+				displayname = "Lead Source"
+				source field name = "Lead_Source"
+				search operators = {"startsWith"}
+				values = {"Advertisement","Chat","Cold Call","Employee Referral","External Referral","Partner","Public Relations","Search Engine","Trade Show","Web Form"}
+			)
+			mailing_city
+			(
+				type = text
+				displayname = "Mailing City"
+				source field name = "Mailing_City"
+				search operators = {"startsWith"}
+			)
+			mailing_country
+			(
+				type = text
+				displayname = "Mailing Country"
+				source field name = "Mailing_Country"
+				search operators = {"startsWith"}
+			)
+			mailing_state
+			(
+				type = text
+				displayname = "Mailing State"
+				source field name = "Mailing_State"
+				search operators = {"startsWith"}
+			)
+			mailing_street
+			(
+				type = text
+				displayname = "Mailing Street"
+				source field name = "Mailing_Street"
+				search operators = {"startsWith"}
+			)
+			mailing_zip
+			(
+				type = text
+				displayname = "Mailing Zip"
+				source field name = "Mailing_Zip"
+				search operators = {"startsWith"}
+			)
+			mobile
+			(
+				type = text
+				displayname = "Mobile"
+				source field name = "Mobile"
+				search operators = {"startsWith"}
+			)
+			other_city
+			(
+				type = text
+				displayname = "Other City"
+				source field name = "Other_City"
+				search operators = {"startsWith"}
+			)
+			other_country
+			(
+				type = text
+				displayname = "Other Country"
+				source field name = "Other_Country"
+				search operators = {"startsWith"}
+			)
+			other_phone
+			(
+				type = text
+				displayname = "Other Phone"
+				source field name = "Other_Phone"
+				search operators = {"startsWith"}
+			)
+			other_state
+			(
+				type = text
+				displayname = "Other State"
+				source field name = "Other_State"
+				search operators = {"startsWith"}
+			)
+			other_street
+			(
+				type = text
+				displayname = "Other Street"
+				source field name = "Other_Street"
+				search operators = {"startsWith"}
+			)
+			other_zip
+			(
+				type = text
+				displayname = "Other Zip"
+				source field name = "Other_Zip"
+				search operators = {"startsWith"}
+			)
+			phone
+			(
+				type = text
+				displayname = "Phone"
+				source field name = "Phone"
+				search operators = {"startsWith"}
+			)
+			reports_to
+			(
+				type = text
+				displayname = "Reports To"
+				source field name = "Reporting_To"
+				search operators = {"startsWith"}
+			)
+			secondary_email
+			(
+				type = email
+				displayname = "Secondary Email"
+				source field name = "Secondary_Email"
+				search operators = {"startsWith"}
+			)
+			skype_id
+			(
+				type = text
+				displayname = "Skype ID"
+				source field name = "Skype_ID"
+				search operators = {"startsWith"}
+			)
+			title
+			(
+				type = text
+				displayname = "Title"
+				source field name = "Title"
+				search operators = {"startsWith"}
+			)
+			twitter
+			(
+				type = text
+				displayname = "Twitter"
+				source field name = "Twitter"
+				search operators = {"startsWith"}
+			)
+			vendor_name
+			(
+				type = text
+				displayname = "Vendor Name"
+				source field name = "Vendor_Name"
+				search operators = {"startsWith"}
+			)
+		}
+		deals
+		{
+			displayname = "Deals"
+			module = Potentials
+			system connection = zohocrm
+			must have account_name
+			(
+				type = text
+				displayname = "Account Name"
+				source field name = "Account_Name"
+				search operators = {"startsWith"}
+			)
+			amount
+			(
+				type = decimal
+				displayname = "Amount"
+				source field name = "Amount"
+				search operators = {"equals"}
+			)
+			campaign_source
+			(
+				type = text
+				displayname = "Campaign Source"
+				source field name = "Campaign_Source"
+				search operators = {"startsWith"}
+			)
+			must have closing_date
+			(
+				type = date
+				displayname = "Closing Date"
+				source field name = "Closing_Date"
+				search operators = {"equals"}
+			)
+			contact_name
+			(
+				type = text
+				displayname = "Contact Name"
+				source field name = "Contact_Name"
+				search operators = {"startsWith"}
+			)
+			description
+			(
+				type = textarea
+				displayname = "Description"
+				source field name = "Description"
+			)
+			lead_source
+			(
+				type = picklist
+				displayname = "Lead Source"
+				source field name = "Lead_Source"
+				search operators = {"startsWith"}
+				values = {"Advertisement","Chat","Cold Call","Employee Referral","External Referral","Partner","Public Relations","Search Engine","Trade Show","Web Form"}
+			)
+			next_step
+			(
+				type = text
+				displayname = "Next Step"
+				source field name = "Next_Step"
+				search operators = {"startsWith"}
+			)
+			potentialid
+			(
+				type = text
+				displayname = "POTENTIALID"
+				source field name = "POTENTIALID"
+				primary = true
+				report only = true
+			)
+			must have potential_name
+			(
+				type = text
+				displayname = "Deal Name"
+				source field name = "Deal_Name"
+				search operators = {"startsWith"}
+			)
+			probability
+			(
+				type = number
+				displayname = "Probability (%)"
+				source field name = "Probability"
+				search operators = {"equals"}
+			)
+			must have stage
+			(
+				type = picklist
+				displayname = "Stage"
+				source field name = "Stage"
+				search operators = {"startsWith"}
+				values = {"Closed Lost","Closed Lost to Competition","Closed Won","Id. Decision Makers","Needs Analysis","Negotiation/Review","Proposal/Price Quote","Qualification","Value Proposition"}
+			)
+			type_field
+			(
+				type = picklist
+				displayname = "Type"
+				source field name = "Type"
+				search operators = {"startsWith"}
+				values = {"Existing Business","New Business"}
+			)
+		}
+	}
+
+	phone
+	{
+		customize
+		{
+        	layout = slidingpane
+		 	icons style = outline
+        	font = "default"
+            style = "3"
+        	color options
+        	{
+             	color = rose
+         	}
+         	logo
+         	{
+             	preference = "none"
+         	}
+		}
+	}
+	tablet
+	{
+		customize
+		{
+        	layout = slidingpane
+		 	icons style = outline
+        	font = "default"
+            style = "3"
+        	color options
+        	{
+             	color = rose
+         	}
+         	logo
+         	{
+             	preference = "none"
+         	}
+		}
+	}
+	
+}
